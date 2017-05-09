@@ -2,6 +2,7 @@
 
 #include "Alignments.h"
 #include "ControlWithLabel.h"
+#include "cinder/gl/gl.h"
 
 namespace reza {
 namespace ui {

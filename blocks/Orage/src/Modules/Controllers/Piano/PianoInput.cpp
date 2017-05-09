@@ -62,7 +62,7 @@ namespace ogre {
         }
         ModulePiano::update();
         
-        Byte in = 0, pitch = 0, velocity = 0;
+        unsigned int in = 0, pitch = 0, velocity = 0;
         
 
         if(!mSerial){

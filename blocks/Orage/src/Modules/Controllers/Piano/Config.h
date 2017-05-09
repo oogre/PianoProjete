@@ -9,6 +9,8 @@
 #ifndef Config_hpp
 #define Config_hpp
 
+#include "cinder/gl/gl.h"
+
 using namespace cinder;
 using namespace cinder::gl;
 using namespace std;

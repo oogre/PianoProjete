@@ -25,10 +25,10 @@ namespace ogre {
         
         PianoInput(string name, vec2 origin, vec2 size, gl::Context * mMainWinCtx);
     public:
-        const static Byte NOTE_ON = 0x90;
-        const static Byte NOTE_OFF = 0x80;
-        const static Byte NOTE_NULL = 0x00;
-        const static Byte CHANNEL_LEN = 0x0f;
+        const static unsigned int NOTE_ON = 0x90;
+        const static unsigned int NOTE_OFF = 0x80;
+        const static unsigned int NOTE_NULL = 0x00;
+        const static unsigned int CHANNEL_LEN = 0x0f;
         
         NotesetRef playingNotes;
         

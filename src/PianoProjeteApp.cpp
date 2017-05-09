@@ -2,6 +2,10 @@
 #include "cinder/app/RendererGl.h"
 #include "cinder/gl/gl.h"
 
+#include "Orage.h"
+#include "UI.h"
+
+
 using namespace ci;
 using namespace ci::app;
 using namespace std;

@@ -23,7 +23,7 @@ namespace ogre {
     HandSplitter::HandSplitter( std::string name, vec2 origin, vec2 size, gl::Context * mMainWinCtx ) : ModulePiano(name+" "+ tools.to_roman(HandSplitter::COUNT), origin, size, 1, Config::MAX_HAND){
         this->mMainWinCtx = mMainWinCtx;
         
-        for(Byte b = 0 ; b < Config::MAX_HAND ; b++){
+        for(unsigned int b = 0 ; b < Config::MAX_HAND ; b++){
             hands.push_back(Noteset::create());
             char current = ((char)((int)'A'+b));
             outputs[current] = hands.at(b);
@@ -43,7 +43,7 @@ namespace ogre {
         }
         ModulePiano::update();
         
-        for(Byte b = 0 ; b < Config::MAX_HAND ; b++){
+        for(unsigned int b = 0 ; b < Config::MAX_HAND ; b++){
             hands.at(b)->clear();
         }
         

@@ -7,6 +7,7 @@
 //
 
 #include "Structs.h"
+#include "cinder/app/App.h"
 
 namespace ogre {
 vector<Note> Data::notes;
