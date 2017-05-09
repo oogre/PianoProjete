@@ -11,7 +11,7 @@
 
 namespace ogre {
 
-const int ModuleCommon::WIDTH = 150;
+const int ModuleCommon::WIDTH = 100;
 int ModuleCommon::ID = 0;
 
 cinder::gl::TextureRef    ModuleCommon::CLOSE;
@@ -37,7 +37,7 @@ void ModuleBase<DataType>::setupInput(){
     
     for( ; it != end ; it ++){
         ButtonRef b = Button::create( "Input "+to_string(it->first), false, Button::Format().label(false));
-        b->setSize( vec2( 25, 25 ) );
+        b->setSize( vec2( 15, 15 ) );
         inputBtns.push_back(b);
         if(it == inputs.begin()){
             LabelRef l = Label::create("inputs", "Input"+s+" : ", FontSize::SMALL);
@@ -57,7 +57,7 @@ void ModuleBase<DataType>::setupOutput(){
     for( ; it != end ; it ++){
 
         ButtonRef b = Button::create( "Output "+to_string(it->first), false, Button::Format().label(false));
-        b->setSize( vec2( 25, 25 ) );
+        b->setSize( vec2( 15, 15 ) );
         outputBtns.push_back(b);
         
         if(it == outputs.begin()){

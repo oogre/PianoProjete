@@ -26,10 +26,10 @@ namespace ogre {
         SliderfRef addSlider(CanvasRef mUi, string name, float * data, float min, float max, int width = 0 ){
             Wires * _w = &wires;
             
-            width = (int) (width != 0 ? width : mUi->getWidth() - 33 - mUi->mPadding.mRight - 2 * mUi->mPadding.mLeft);
+            width = (int) (width != 0 ? width : mUi->getWidth() - 18 - mUi->mPadding.mRight - 2 * mUi->mPadding.mLeft);
             
             SliderfRef s = Sliderf::create( name, data, min, max, Sliderf::Format().precision(2).label(true).crossFader(true));
-            s->setSize( vec2( width, 20 ) );
+            s->setSize( vec2( width, 12 ) );
             
             
             RangefRef r = Rangef::create(name+" Limiter",  min, max,  min, max, Rangef::Format().label(false));
@@ -37,10 +37,10 @@ namespace ogre {
                            [s](float a, float b) {
                                s->setMinAndMax(a, b, true);
                            });
-            r->setSize( vec2( width, 10 ) );
+            r->setSize( vec2( width, 7 ) );
             
             ButtonRef b = Button::create( name+" InputCV", false, Button::Format().label(false));
-            b->setSize( vec2( 33, 33 ) );
+            b->setSize( vec2( 20, 20 ) );
             b->setCallback(
                            [s, b, _w, mUi](bool a) {
                                if(a){

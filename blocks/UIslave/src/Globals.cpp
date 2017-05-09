@@ -4,7 +4,7 @@
 namespace reza {
 namespace ui {
 
-float Padding = 2.0f;
+float Padding = 1.0f;
 
 #if defined( CINDER_COCOA )
 float CanvasWidth = 212.0f;

@@ -8,7 +8,7 @@ using namespace cinder;
 using namespace std;
 
 View::View()
-	: Responder(), mHit( false ), mVisible( true ), mSetNeedsDisplay( true ), mBounds( 0, 0, 0, 0 ), mPadding( 2.0f ), mTouchId( -1 ), mEnabled( true ), mEmbedded( false ), mSetup( false ), mUniqueIDs( 0 ), mLoadSubViews( true ), mTriggerSubViews( true ), mTriggerOnLoad( true )
+	: Responder(), mHit( false ), mVisible( true ), mSetNeedsDisplay( true ), mBounds( 0, 0, 0, 0 ), mPadding( 1.2 ), mTouchId( -1 ), mEnabled( true ), mEmbedded( false ), mSetup( false ), mUniqueIDs( 0 ), mLoadSubViews( true ), mTriggerSubViews( true ), mTriggerOnLoad( true )
 {
 }
 
