@@ -47,6 +47,7 @@ class PianoProjeteApp : public App {
 void PianoProjeteApp::prepareSettings( Settings *settings )
 {
     settings->setWindowSize( 1920, 1440 );
+    settings->setFullScreen(true, FullScreenOptions().display(FullScreenOptions().getDisplay()));
     //settings->setFullScreen( true );
     //settings->setBorderless();
 }
