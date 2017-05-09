@@ -1,0 +1,463 @@
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav</Extensions>
+    </Filter>
+    <Filter Include="Blocks">
+      <UniqueIdentifier>{285E8874-009F-44A0-9F79-DE42689256E0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Blocks\Orage">
+      <UniqueIdentifier>{5678B461-6518-4423-AAEB-67E99C25E70E}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Blocks\Orage\src">
+      <UniqueIdentifier>{62A61775-BE0C-494F-AEB1-B3281363FE08}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Blocks\Orage\src\Wires">
+      <UniqueIdentifier>{2B10AEAE-FD77-47A4-8E33-35BD36CF8850}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Blocks\Orage\src\Modules">
+      <UniqueIdentifier>{D4D48D65-C886-41BC-891C-05E0B0B0BDE0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Blocks\Orage\src\Modules\Bases">
+      <UniqueIdentifier>{858784DC-2BF5-462C-BE32-4183BC9D67D7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Blocks\Orage\src\Modules\Controllers">
+      <UniqueIdentifier>{BC98B129-D84B-4DAF-A738-17189A103533}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Blocks\Orage\src\Modules\Controllers\Piano">
+      <UniqueIdentifier>{66D58EC8-42A8-4083-B3F5-FCD722219E52}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Blocks\Orage\src\Modules\Videos">
+      <UniqueIdentifier>{C0B83827-B10D-45C1-9150-3E01F5E93E2A}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Blocks\UIslave">
+      <UniqueIdentifier>{63DFA2C3-42FB-453A-9A27-D46470FE1290}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Blocks\UIslave\src">
+      <UniqueIdentifier>{1BD465F4-E560-4FD2-82C6-18E5799CCCA3}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\src\PianoProjeteApp.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\PianoProjeteApp.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClInclude Include="..\include\Resources.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\blocks\Orage\src\Orage.h">
+      <Filter>Blocks\Orage\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\blocks\Orage\src\Tools.h">
+      <Filter>Blocks\Orage\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\blocks\Orage\src\Wires\Wire.h">
+      <Filter>Blocks\Orage\src\Wires</Filter>
+    </ClInclude>
+    <ClInclude Include="..\blocks\Orage\src\Wires\WireCV.h">
+      <Filter>Blocks\Orage\src\Wires</Filter>
+    </ClInclude>
+    <ClInclude Include="..\blocks\Orage\src\Wires\WirePiano.h">
+      <Filter>Blocks\Orage\src\Wires</Filter>
+    </ClInclude>
+    <ClInclude Include="..\blocks\Orage\src\Wires\Wires.h">
+      <Filter>Blocks\Orage\src\Wires</Filter>
+    </ClInclude>
+    <ClInclude Include="..\blocks\Orage\src\Wires\WireVideo.h">
+      <Filter>Blocks\Orage\src\Wires</Filter>
+    </ClInclude>
+    <ClInclude Include="..\blocks\Orage\src\Modules\Bases\ModuleBase.h">
+      <Filter>Blocks\Orage\src\Modules\Bases</Filter>
+    </ClInclude>
+    <ClInclude Include="..\blocks\Orage\src\Modules\Bases\ModulePiano.h">
+      <Filter>Blocks\Orage\src\Modules\Bases</Filter>
+    </ClInclude>
+    <ClInclude Include="..\blocks\Orage\src\Modules\Bases\ModuleVideo.h">
+      <Filter>Blocks\Orage\src\Modules\Bases</Filter>
+    </ClInclude>
+    <ClInclude Include="..\blocks\Orage\src\Modules\Controllers\FFT.h">
+      <Filter>Blocks\Orage\src\Modules\Controllers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\blocks\Orage\src\Modules\Controllers\Lfos.h">
+      <Filter>Blocks\Orage\src\Modules\Controllers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\blocks\Orage\src\Modules\Controllers\Piano\Config.h">
+      <Filter>Blocks\Orage\src\Modules\Controllers\Piano</Filter>
+    </ClInclude>
+    <ClInclude Include="..\blocks\Orage\src\Modules\Controllers\Piano\HandSplitter.h">
+      <Filter>Blocks\Orage\src\Modules\Controllers\Piano</Filter>
+    </ClInclude>
+    <ClInclude Include="..\blocks\Orage\src\Modules\Controllers\Piano\NoteDisplay.h">
+      <Filter>Blocks\Orage\src\Modules\Controllers\Piano</Filter>
+    </ClInclude>
+    <ClInclude Include="..\blocks\Orage\src\Modules\Controllers\Piano\PianoInput.h">
+      <Filter>Blocks\Orage\src\Modules\Controllers\Piano</Filter>
+    </ClInclude>
+    <ClInclude Include="..\blocks\Orage\src\Modules\Controllers\Piano\PositionExtractor.h">
+      <Filter>Blocks\Orage\src\Modules\Controllers\Piano</Filter>
+    </ClInclude>
+    <ClInclude Include="..\blocks\Orage\src\Modules\Controllers\Piano\Structs.h">
+      <Filter>Blocks\Orage\src\Modules\Controllers\Piano</Filter>
+    </ClInclude>
+    <ClInclude Include="..\blocks\Orage\src\Modules\Videos\CellNoise.h">
+      <Filter>Blocks\Orage\src\Modules\Videos</Filter>
+    </ClInclude>
+    <ClInclude Include="..\blocks\Orage\src\Modules\Videos\Cloud.h">
+      <Filter>Blocks\Orage\src\Modules\Videos</Filter>
+    </ClInclude>
+    <ClInclude Include="..\blocks\Orage\src\Modules\Videos\ColorAdjustement.h">
+      <Filter>Blocks\Orage\src\Modules\Videos</Filter>
+    </ClInclude>
+    <ClInclude Include="..\blocks\Orage\src\Modules\Videos\Crossfader.h">
+      <Filter>Blocks\Orage\src\Modules\Videos</Filter>
+    </ClInclude>
+    <ClInclude Include="..\blocks\Orage\src\Modules\Videos\Invert.h">
+      <Filter>Blocks\Orage\src\Modules\Videos</Filter>
+    </ClInclude>
+    <ClInclude Include="..\blocks\Orage\src\Modules\Videos\KeyMixer.h">
+      <Filter>Blocks\Orage\src\Modules\Videos</Filter>
+    </ClInclude>
+    <ClInclude Include="..\blocks\Orage\src\Modules\Videos\Matte.h">
+      <Filter>Blocks\Orage\src\Modules\Videos</Filter>
+    </ClInclude>
+    <ClInclude Include="..\blocks\Orage\src\Modules\Videos\Mosher.h">
+      <Filter>Blocks\Orage\src\Modules\Videos</Filter>
+    </ClInclude>
+    <ClInclude Include="..\blocks\Orage\src\Modules\Videos\Oscillator.h">
+      <Filter>Blocks\Orage\src\Modules\Videos</Filter>
+    </ClInclude>
+    <ClInclude Include="..\blocks\Orage\src\Modules\Videos\Spliter.h">
+      <Filter>Blocks\Orage\src\Modules\Videos</Filter>
+    </ClInclude>
+    <ClInclude Include="..\blocks\Orage\src\Modules\Videos\Tile.h">
+      <Filter>Blocks\Orage\src\Modules\Videos</Filter>
+    </ClInclude>
+    <ClInclude Include="..\blocks\Orage\src\Modules\Videos\Trail.h">
+      <Filter>Blocks\Orage\src\Modules\Videos</Filter>
+    </ClInclude>
+    <ClCompile Include="..\blocks\Orage\src\Orage.cpp">
+      <Filter>Blocks\Orage\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\blocks\Orage\src\Tools.cpp">
+      <Filter>Blocks\Orage\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\blocks\Orage\src\Wires\Wire.cpp">
+      <Filter>Blocks\Orage\src\Wires</Filter>
+    </ClCompile>
+    <ClCompile Include="..\blocks\Orage\src\Wires\WireCV.cpp">
+      <Filter>Blocks\Orage\src\Wires</Filter>
+    </ClCompile>
+    <ClCompile Include="..\blocks\Orage\src\Wires\WirePiano.cpp">
+      <Filter>Blocks\Orage\src\Wires</Filter>
+    </ClCompile>
+    <ClCompile Include="..\blocks\Orage\src\Wires\Wires.cpp">
+      <Filter>Blocks\Orage\src\Wires</Filter>
+    </ClCompile>
+    <ClCompile Include="..\blocks\Orage\src\Wires\WireVideo.cpp">
+      <Filter>Blocks\Orage\src\Wires</Filter>
+    </ClCompile>
+    <ClCompile Include="..\blocks\Orage\src\Modules\Bases\ModuleBase.cpp">
+      <Filter>Blocks\Orage\src\Modules\Bases</Filter>
+    </ClCompile>
+    <ClCompile Include="..\blocks\Orage\src\Modules\Bases\ModulePiano.cpp">
+      <Filter>Blocks\Orage\src\Modules\Bases</Filter>
+    </ClCompile>
+    <ClCompile Include="..\blocks\Orage\src\Modules\Bases\ModuleVideo.cpp">
+      <Filter>Blocks\Orage\src\Modules\Bases</Filter>
+    </ClCompile>
+    <ClCompile Include="..\blocks\Orage\src\Modules\Controllers\FFT.cpp">
+      <Filter>Blocks\Orage\src\Modules\Controllers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\blocks\Orage\src\Modules\Controllers\Lfos.cpp">
+      <Filter>Blocks\Orage\src\Modules\Controllers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\blocks\Orage\src\Modules\Controllers\Piano\Config.cpp">
+      <Filter>Blocks\Orage\src\Modules\Controllers\Piano</Filter>
+    </ClCompile>
+    <ClCompile Include="..\blocks\Orage\src\Modules\Controllers\Piano\HandSplitter.cpp">
+      <Filter>Blocks\Orage\src\Modules\Controllers\Piano</Filter>
+    </ClCompile>
+    <ClCompile Include="..\blocks\Orage\src\Modules\Controllers\Piano\NoteDisplay.cpp">
+      <Filter>Blocks\Orage\src\Modules\Controllers\Piano</Filter>
+    </ClCompile>
+    <ClCompile Include="..\blocks\Orage\src\Modules\Controllers\Piano\PianoInput.cpp">
+      <Filter>Blocks\Orage\src\Modules\Controllers\Piano</Filter>
+    </ClCompile>
+    <ClCompile Include="..\blocks\Orage\src\Modules\Controllers\Piano\PositionExtractor.cpp">
+      <Filter>Blocks\Orage\src\Modules\Controllers\Piano</Filter>
+    </ClCompile>
+    <ClCompile Include="..\blocks\Orage\src\Modules\Controllers\Piano\Structs.cpp">
+      <Filter>Blocks\Orage\src\Modules\Controllers\Piano</Filter>
+    </ClCompile>
+    <ClCompile Include="..\blocks\Orage\src\Modules\Videos\CellNoise.cpp">
+      <Filter>Blocks\Orage\src\Modules\Videos</Filter>
+    </ClCompile>
+    <ClCompile Include="..\blocks\Orage\src\Modules\Videos\Cloud.cpp">
+      <Filter>Blocks\Orage\src\Modules\Videos</Filter>
+    </ClCompile>
+    <ClCompile Include="..\blocks\Orage\src\Modules\Videos\ColorAdjustement.cpp">
+      <Filter>Blocks\Orage\src\Modules\Videos</Filter>
+    </ClCompile>
+    <ClCompile Include="..\blocks\Orage\src\Modules\Videos\Crossfader.cpp">
+      <Filter>Blocks\Orage\src\Modules\Videos</Filter>
+    </ClCompile>
+    <ClCompile Include="..\blocks\Orage\src\Modules\Videos\Invert.cpp">
+      <Filter>Blocks\Orage\src\Modules\Videos</Filter>
+    </ClCompile>
+    <ClCompile Include="..\blocks\Orage\src\Modules\Videos\KeyMixer.cpp">
+      <Filter>Blocks\Orage\src\Modules\Videos</Filter>
+    </ClCompile>
+    <ClCompile Include="..\blocks\Orage\src\Modules\Videos\Matte.cpp">
+      <Filter>Blocks\Orage\src\Modules\Videos</Filter>
+    </ClCompile>
+    <ClCompile Include="..\blocks\Orage\src\Modules\Videos\Mosher.cpp">
+      <Filter>Blocks\Orage\src\Modules\Videos</Filter>
+    </ClCompile>
+    <ClCompile Include="..\blocks\Orage\src\Modules\Videos\Oscillator.cpp">
+      <Filter>Blocks\Orage\src\Modules\Videos</Filter>
+    </ClCompile>
+    <ClCompile Include="..\blocks\Orage\src\Modules\Videos\Spliter.cpp">
+      <Filter>Blocks\Orage\src\Modules\Videos</Filter>
+    </ClCompile>
+    <ClCompile Include="..\blocks\Orage\src\Modules\Videos\Tile.cpp">
+      <Filter>Blocks\Orage\src\Modules\Videos</Filter>
+    </ClCompile>
+    <ClCompile Include="..\blocks\Orage\src\Modules\Videos\Trail.cpp">
+      <Filter>Blocks\Orage\src\Modules\Videos</Filter>
+    </ClCompile>
+    <ClInclude Include="..\blocks\UIslave\src\Alignments.h">
+      <Filter>Blocks\UIslave\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\blocks\UIslave\src\BSplineEditor.h">
+      <Filter>Blocks\UIslave\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\blocks\UIslave\src\Button.h">
+      <Filter>Blocks\UIslave\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\blocks\UIslave\src\Canvas.h">
+      <Filter>Blocks\UIslave\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\blocks\UIslave\src\CocoaWindowCanvas.h">
+      <Filter>Blocks\UIslave\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\blocks\UIslave\src\ColorPicker.h">
+      <Filter>Blocks\UIslave\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\blocks\UIslave\src\Colors.h">
+      <Filter>Blocks\UIslave\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\blocks\UIslave\src\Control.h">
+      <Filter>Blocks\UIslave\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\blocks\UIslave\src\Controls.h">
+      <Filter>Blocks\UIslave\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\blocks\UIslave\src\ControlWithLabel.h">
+      <Filter>Blocks\UIslave\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\blocks\UIslave\src\Dialer.h">
+      <Filter>Blocks\UIslave\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\blocks\UIslave\src\Directions.h">
+      <Filter>Blocks\UIslave\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\blocks\UIslave\src\Envelope.h">
+      <Filter>Blocks\UIslave\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\blocks\UIslave\src\FontSizes.h">
+      <Filter>Blocks\UIslave\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\blocks\UIslave\src\Fps.h">
+      <Filter>Blocks\UIslave\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\blocks\UIslave\src\Globals.h">
+      <Filter>Blocks\UIslave\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\blocks\UIslave\src\Graph.h">
+      <Filter>Blocks\UIslave\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\blocks\UIslave\src\Helpers.h">
+      <Filter>Blocks\UIslave\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\blocks\UIslave\src\Label.h">
+      <Filter>Blocks\UIslave\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\blocks\UIslave\src\MultiSlider.h">
+      <Filter>Blocks\UIslave\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\blocks\UIslave\src\Padding.h">
+      <Filter>Blocks\UIslave\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\blocks\UIslave\src\Plotter.h">
+      <Filter>Blocks\UIslave\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\blocks\UIslave\src\QuaternionOrderer.h">
+      <Filter>Blocks\UIslave\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\blocks\UIslave\src\Radio.h">
+      <Filter>Blocks\UIslave\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\blocks\UIslave\src\Range.h">
+      <Filter>Blocks\UIslave\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\blocks\UIslave\src\RenderData.h">
+      <Filter>Blocks\UIslave\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\blocks\UIslave\src\Responder.h">
+      <Filter>Blocks\UIslave\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\blocks\UIslave\src\Slider.h">
+      <Filter>Blocks\UIslave\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\blocks\UIslave\src\Spacer.h">
+      <Filter>Blocks\UIslave\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\blocks\UIslave\src\Spectrum.h">
+      <Filter>Blocks\UIslave\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\blocks\UIslave\src\States.h">
+      <Filter>Blocks\UIslave\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\blocks\UIslave\src\SuperCanvas.h">
+      <Filter>Blocks\UIslave\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\blocks\UIslave\src\TextInput.h">
+      <Filter>Blocks\UIslave\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\blocks\UIslave\src\TextureView.h">
+      <Filter>Blocks\UIslave\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\blocks\UIslave\src\Toggle.h">
+      <Filter>Blocks\UIslave\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\blocks\UIslave\src\Triggers.h">
+      <Filter>Blocks\UIslave\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\blocks\UIslave\src\UI.h">
+      <Filter>Blocks\UIslave\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\blocks\UIslave\src\View.h">
+      <Filter>Blocks\UIslave\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\blocks\UIslave\src\Waveform.h">
+      <Filter>Blocks\UIslave\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\blocks\UIslave\src\WindowCanvas.h">
+      <Filter>Blocks\UIslave\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\blocks\UIslave\src\XYPad.h">
+      <Filter>Blocks\UIslave\src</Filter>
+    </ClInclude>
+    <ClCompile Include="..\blocks\UIslave\src\BSplineEditor.cpp">
+      <Filter>Blocks\UIslave\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\blocks\UIslave\src\Button.cpp">
+      <Filter>Blocks\UIslave\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\blocks\UIslave\src\Canvas.cpp">
+      <Filter>Blocks\UIslave\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\blocks\UIslave\src\ColorPicker.cpp">
+      <Filter>Blocks\UIslave\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\blocks\UIslave\src\Colors.cpp">
+      <Filter>Blocks\UIslave\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\blocks\UIslave\src\Control.cpp">
+      <Filter>Blocks\UIslave\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\blocks\UIslave\src\ControlWithLabel.cpp">
+      <Filter>Blocks\UIslave\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\blocks\UIslave\src\Dialer.cpp">
+      <Filter>Blocks\UIslave\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\blocks\UIslave\src\Envelope.cpp">
+      <Filter>Blocks\UIslave\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\blocks\UIslave\src\Fps.cpp">
+      <Filter>Blocks\UIslave\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\blocks\UIslave\src\Globals.cpp">
+      <Filter>Blocks\UIslave\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\blocks\UIslave\src\Graph.cpp">
+      <Filter>Blocks\UIslave\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\blocks\UIslave\src\Label.cpp">
+      <Filter>Blocks\UIslave\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\blocks\UIslave\src\MultiSlider.cpp">
+      <Filter>Blocks\UIslave\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\blocks\UIslave\src\Plotter.cpp">
+      <Filter>Blocks\UIslave\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\blocks\UIslave\src\QuaternionOrderer.cpp">
+      <Filter>Blocks\UIslave\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\blocks\UIslave\src\Radio.cpp">
+      <Filter>Blocks\UIslave\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\blocks\UIslave\src\Range.cpp">
+      <Filter>Blocks\UIslave\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\blocks\UIslave\src\Responder.cpp">
+      <Filter>Blocks\UIslave\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\blocks\UIslave\src\Slider.cpp">
+      <Filter>Blocks\UIslave\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\blocks\UIslave\src\Spacer.cpp">
+      <Filter>Blocks\UIslave\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\blocks\UIslave\src\Spectrum.cpp">
+      <Filter>Blocks\UIslave\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\blocks\UIslave\src\SuperCanvas.cpp">
+      <Filter>Blocks\UIslave\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\blocks\UIslave\src\TextInput.cpp">
+      <Filter>Blocks\UIslave\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\blocks\UIslave\src\TextureView.cpp">
+      <Filter>Blocks\UIslave\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\blocks\UIslave\src\Toggle.cpp">
+      <Filter>Blocks\UIslave\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\blocks\UIslave\src\View.cpp">
+      <Filter>Blocks\UIslave\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\blocks\UIslave\src\Waveform.cpp">
+      <Filter>Blocks\UIslave\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\blocks\UIslave\src\WindowCanvas.cpp">
+      <Filter>Blocks\UIslave\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\blocks\UIslave\src\XYPad.cpp">
+      <Filter>Blocks\UIslave\src</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\include\Resources.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="Resources.rc">
+      <Filter>Resource Files</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+</Project>

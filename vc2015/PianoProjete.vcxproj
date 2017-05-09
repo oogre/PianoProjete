@@ -1,0 +1,331 @@
+<Project DefaultTargets="Build" ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{AFAC5FE1-0F76-43A3-8068-341DA7479B39}</ProjectGuid>
+    <RootNamespace>PianoProjete</RootNamespace>
+    <Keyword>Win32Proj</Keyword>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+    <WholeProgramOptimization>false</WholeProgramOptimization>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+    <WholeProgramOptimization>false</WholeProgramOptimization>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings" />
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.30319.1</_ProjectFileVersion>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(ProjectDir)build\$(Platform)\$(Configuration)\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(ProjectDir)build\$(Platform)\$(Configuration)\intermediate\</IntDir>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</LinkIncremental>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</LinkIncremental>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(ProjectDir)build\$(Platform)\$(Configuration)\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(ProjectDir)build\$(Platform)\$(Configuration)\intermediate\</IntDir>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</LinkIncremental>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>..\include;"..\..\Desktop\cinder_master\include";..\blocks\Orage\src;..\blocks\Orage\src\Wires;..\blocks\Orage\src\Modules;..\blocks\Orage\src\Modules\Bases;..\blocks\Orage\src\Modules\Controllers;..\blocks\Orage\src\Modules\Controllers\Piano;..\blocks\Orage\src\Modules\Videos;..\blocks\UIslave\src</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_WIN32_WINNT=0x0601;_WINDOWS;NOMINMAX;_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MinimalRebuild>true</MinimalRebuild>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <PrecompiledHeader />
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+    </ClCompile>
+    <ResourceCompile>
+      <AdditionalIncludeDirectories>"..\..\Desktop\cinder_master\include";..\include</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Link>
+      <AdditionalDependencies>cinder.lib;OpenGL32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>"..\..\Desktop\cinder_master\lib\msw\$(PlatformTarget)";"..\..\Desktop\cinder_master\lib\msw\$(PlatformTarget)\$(Configuration)\$(PlatformToolset)\"</AdditionalLibraryDirectories>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Windows</SubSystem>
+      <RandomizedBaseAddress>false</RandomizedBaseAddress>
+      <DataExecutionPrevention />
+      <TargetMachine>MachineX86</TargetMachine>
+      <IgnoreSpecificDefaultLibraries>LIBCMT;LIBCPMT</IgnoreSpecificDefaultLibraries>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>..\include;"..\..\Desktop\cinder_master\include";..\blocks\Orage\src;..\blocks\Orage\src\Wires;..\blocks\Orage\src\Modules;..\blocks\Orage\src\Modules\Bases;..\blocks\Orage\src\Modules\Controllers;..\blocks\Orage\src\Modules\Controllers\Piano;..\blocks\Orage\src\Modules\Videos;..\blocks\UIslave\src</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_WIN32_WINNT=0x0601;_WINDOWS;NOMINMAX;_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <PrecompiledHeader />
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+    </ClCompile>
+    <ResourceCompile>
+      <AdditionalIncludeDirectories>"..\..\Desktop\cinder_master\include";..\include</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Link>
+      <AdditionalDependencies>cinder.lib;OpenGL32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>"..\..\Desktop\cinder_master\lib\msw\$(PlatformTarget)";"..\..\Desktop\cinder_master\lib\msw\$(PlatformTarget)\$(Configuration)\$(PlatformToolset)\"</AdditionalLibraryDirectories>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Windows</SubSystem>
+      <RandomizedBaseAddress>false</RandomizedBaseAddress>
+      <DataExecutionPrevention />
+      <IgnoreSpecificDefaultLibraries>LIBCMT;LIBCPMT</IgnoreSpecificDefaultLibraries>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>..\include;"..\..\Desktop\cinder_master\include";..\blocks\Orage\src;..\blocks\Orage\src\Wires;..\blocks\Orage\src\Modules;..\blocks\Orage\src\Modules\Bases;..\blocks\Orage\src\Modules\Controllers;..\blocks\Orage\src\Modules\Controllers\Piano;..\blocks\Orage\src\Modules\Videos;..\blocks\UIslave\src</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_WIN32_WINNT=0x0601;_WINDOWS;NOMINMAX;NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <PrecompiledHeader />
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+    </ClCompile>
+    <ProjectReference>
+      <LinkLibraryDependencies>true</LinkLibraryDependencies>
+    </ProjectReference>
+    <ResourceCompile>
+      <AdditionalIncludeDirectories>"..\..\Desktop\cinder_master\include";..\include</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Link>
+      <AdditionalDependencies>cinder.lib;OpenGL32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>"..\..\Desktop\cinder_master\lib\msw\$(PlatformTarget)";"..\..\Desktop\cinder_master\lib\msw\$(PlatformTarget)\$(Configuration)\$(PlatformToolset)\"</AdditionalLibraryDirectories>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <GenerateMapFile>true</GenerateMapFile>
+      <SubSystem>Windows</SubSystem>
+      <OptimizeReferences>true</OptimizeReferences>
+      <EnableCOMDATFolding />
+      <RandomizedBaseAddress>false</RandomizedBaseAddress>
+      <DataExecutionPrevention />
+      <TargetMachine>MachineX86</TargetMachine>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>..\include;"..\..\Desktop\cinder_master\include";..\blocks\Orage\src;..\blocks\Orage\src\Wires;..\blocks\Orage\src\Modules;..\blocks\Orage\src\Modules\Bases;..\blocks\Orage\src\Modules\Controllers;..\blocks\Orage\src\Modules\Controllers\Piano;..\blocks\Orage\src\Modules\Videos;..\blocks\UIslave\src</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_WIN32_WINNT=0x0601;_WINDOWS;NOMINMAX;NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <PrecompiledHeader />
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+    </ClCompile>
+    <ProjectReference>
+      <LinkLibraryDependencies>true</LinkLibraryDependencies>
+    </ProjectReference>
+    <ResourceCompile>
+      <AdditionalIncludeDirectories>"..\..\Desktop\cinder_master\include";..\include</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Link>
+      <AdditionalDependencies>cinder.lib;OpenGL32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>"..\..\Desktop\cinder_master\lib\msw\$(PlatformTarget)\";"..\..\Desktop\cinder_master\lib\msw\$(PlatformTarget)\$(Configuration)\$(PlatformToolset)\"</AdditionalLibraryDirectories>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <GenerateMapFile>true</GenerateMapFile>
+      <SubSystem>Windows</SubSystem>
+      <OptimizeReferences>true</OptimizeReferences>
+      <EnableCOMDATFolding />
+      <RandomizedBaseAddress>false</RandomizedBaseAddress>
+      <DataExecutionPrevention />
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ResourceCompile Include="Resources.rc" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup />
+  <ItemGroup>
+    <ClCompile Include="..\src\PianoProjeteApp.cpp" />
+    <ClCompile Include="..\blocks\Orage\src\Orage.cpp" />
+    <ClCompile Include="..\blocks\Orage\src\Tools.cpp" />
+    <ClCompile Include="..\blocks\Orage\src\Wires\Wire.cpp" />
+    <ClCompile Include="..\blocks\Orage\src\Wires\WireCV.cpp" />
+    <ClCompile Include="..\blocks\Orage\src\Wires\WirePiano.cpp" />
+    <ClCompile Include="..\blocks\Orage\src\Wires\Wires.cpp" />
+    <ClCompile Include="..\blocks\Orage\src\Wires\WireVideo.cpp" />
+    <ClCompile Include="..\blocks\Orage\src\Modules\Bases\ModuleBase.cpp" />
+    <ClCompile Include="..\blocks\Orage\src\Modules\Bases\ModulePiano.cpp" />
+    <ClCompile Include="..\blocks\Orage\src\Modules\Bases\ModuleVideo.cpp" />
+    <ClCompile Include="..\blocks\Orage\src\Modules\Controllers\FFT.cpp" />
+    <ClCompile Include="..\blocks\Orage\src\Modules\Controllers\Lfos.cpp" />
+    <ClCompile Include="..\blocks\Orage\src\Modules\Controllers\Piano\Config.cpp" />
+    <ClCompile Include="..\blocks\Orage\src\Modules\Controllers\Piano\HandSplitter.cpp" />
+    <ClCompile Include="..\blocks\Orage\src\Modules\Controllers\Piano\NoteDisplay.cpp" />
+    <ClCompile Include="..\blocks\Orage\src\Modules\Controllers\Piano\PianoInput.cpp" />
+    <ClCompile Include="..\blocks\Orage\src\Modules\Controllers\Piano\PositionExtractor.cpp" />
+    <ClCompile Include="..\blocks\Orage\src\Modules\Controllers\Piano\Structs.cpp" />
+    <ClCompile Include="..\blocks\Orage\src\Modules\Videos\CellNoise.cpp" />
+    <ClCompile Include="..\blocks\Orage\src\Modules\Videos\Cloud.cpp" />
+    <ClCompile Include="..\blocks\Orage\src\Modules\Videos\ColorAdjustement.cpp" />
+    <ClCompile Include="..\blocks\Orage\src\Modules\Videos\Crossfader.cpp" />
+    <ClCompile Include="..\blocks\Orage\src\Modules\Videos\Invert.cpp" />
+    <ClCompile Include="..\blocks\Orage\src\Modules\Videos\KeyMixer.cpp" />
+    <ClCompile Include="..\blocks\Orage\src\Modules\Videos\Matte.cpp" />
+    <ClCompile Include="..\blocks\Orage\src\Modules\Videos\Mosher.cpp" />
+    <ClCompile Include="..\blocks\Orage\src\Modules\Videos\Oscillator.cpp" />
+    <ClCompile Include="..\blocks\Orage\src\Modules\Videos\Spliter.cpp" />
+    <ClCompile Include="..\blocks\Orage\src\Modules\Videos\Tile.cpp" />
+    <ClCompile Include="..\blocks\Orage\src\Modules\Videos\Trail.cpp" />
+    <ClCompile Include="..\blocks\UIslave\src\BSplineEditor.cpp" />
+    <ClCompile Include="..\blocks\UIslave\src\Button.cpp" />
+    <ClCompile Include="..\blocks\UIslave\src\Canvas.cpp" />
+    <ClCompile Include="..\blocks\UIslave\src\ColorPicker.cpp" />
+    <ClCompile Include="..\blocks\UIslave\src\Colors.cpp" />
+    <ClCompile Include="..\blocks\UIslave\src\Control.cpp" />
+    <ClCompile Include="..\blocks\UIslave\src\ControlWithLabel.cpp" />
+    <ClCompile Include="..\blocks\UIslave\src\Dialer.cpp" />
+    <ClCompile Include="..\blocks\UIslave\src\Envelope.cpp" />
+    <ClCompile Include="..\blocks\UIslave\src\Fps.cpp" />
+    <ClCompile Include="..\blocks\UIslave\src\Globals.cpp" />
+    <ClCompile Include="..\blocks\UIslave\src\Graph.cpp" />
+    <ClCompile Include="..\blocks\UIslave\src\Label.cpp" />
+    <ClCompile Include="..\blocks\UIslave\src\MultiSlider.cpp" />
+    <ClCompile Include="..\blocks\UIslave\src\Plotter.cpp" />
+    <ClCompile Include="..\blocks\UIslave\src\QuaternionOrderer.cpp" />
+    <ClCompile Include="..\blocks\UIslave\src\Radio.cpp" />
+    <ClCompile Include="..\blocks\UIslave\src\Range.cpp" />
+    <ClCompile Include="..\blocks\UIslave\src\Responder.cpp" />
+    <ClCompile Include="..\blocks\UIslave\src\Slider.cpp" />
+    <ClCompile Include="..\blocks\UIslave\src\Spacer.cpp" />
+    <ClCompile Include="..\blocks\UIslave\src\Spectrum.cpp" />
+    <ClCompile Include="..\blocks\UIslave\src\SuperCanvas.cpp" />
+    <ClCompile Include="..\blocks\UIslave\src\TextInput.cpp" />
+    <ClCompile Include="..\blocks\UIslave\src\TextureView.cpp" />
+    <ClCompile Include="..\blocks\UIslave\src\Toggle.cpp" />
+    <ClCompile Include="..\blocks\UIslave\src\View.cpp" />
+    <ClCompile Include="..\blocks\UIslave\src\Waveform.cpp" />
+    <ClCompile Include="..\blocks\UIslave\src\WindowCanvas.cpp" />
+    <ClCompile Include="..\blocks\UIslave\src\XYPad.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\include\Resources.h" />
+    <ClInclude Include="..\blocks\Orage\src\Orage.h" />
+    <ClInclude Include="..\blocks\Orage\src\Tools.h" />
+    <ClInclude Include="..\blocks\Orage\src\Wires\Wire.h" />
+    <ClInclude Include="..\blocks\Orage\src\Wires\WireCV.h" />
+    <ClInclude Include="..\blocks\Orage\src\Wires\WirePiano.h" />
+    <ClInclude Include="..\blocks\Orage\src\Wires\Wires.h" />
+    <ClInclude Include="..\blocks\Orage\src\Wires\WireVideo.h" />
+    <ClInclude Include="..\blocks\Orage\src\Modules\Bases\ModuleBase.h" />
+    <ClInclude Include="..\blocks\Orage\src\Modules\Bases\ModulePiano.h" />
+    <ClInclude Include="..\blocks\Orage\src\Modules\Bases\ModuleVideo.h" />
+    <ClInclude Include="..\blocks\Orage\src\Modules\Controllers\FFT.h" />
+    <ClInclude Include="..\blocks\Orage\src\Modules\Controllers\Lfos.h" />
+    <ClInclude Include="..\blocks\Orage\src\Modules\Controllers\Piano\Config.h" />
+    <ClInclude Include="..\blocks\Orage\src\Modules\Controllers\Piano\HandSplitter.h" />
+    <ClInclude Include="..\blocks\Orage\src\Modules\Controllers\Piano\NoteDisplay.h" />
+    <ClInclude Include="..\blocks\Orage\src\Modules\Controllers\Piano\PianoInput.h" />
+    <ClInclude Include="..\blocks\Orage\src\Modules\Controllers\Piano\PositionExtractor.h" />
+    <ClInclude Include="..\blocks\Orage\src\Modules\Controllers\Piano\Structs.h" />
+    <ClInclude Include="..\blocks\Orage\src\Modules\Videos\CellNoise.h" />
+    <ClInclude Include="..\blocks\Orage\src\Modules\Videos\Cloud.h" />
+    <ClInclude Include="..\blocks\Orage\src\Modules\Videos\ColorAdjustement.h" />
+    <ClInclude Include="..\blocks\Orage\src\Modules\Videos\Crossfader.h" />
+    <ClInclude Include="..\blocks\Orage\src\Modules\Videos\Invert.h" />
+    <ClInclude Include="..\blocks\Orage\src\Modules\Videos\KeyMixer.h" />
+    <ClInclude Include="..\blocks\Orage\src\Modules\Videos\Matte.h" />
+    <ClInclude Include="..\blocks\Orage\src\Modules\Videos\Mosher.h" />
+    <ClInclude Include="..\blocks\Orage\src\Modules\Videos\Oscillator.h" />
+    <ClInclude Include="..\blocks\Orage\src\Modules\Videos\Spliter.h" />
+    <ClInclude Include="..\blocks\Orage\src\Modules\Videos\Tile.h" />
+    <ClInclude Include="..\blocks\Orage\src\Modules\Videos\Trail.h" />
+    <ClInclude Include="..\blocks\UIslave\src\Alignments.h" />
+    <ClInclude Include="..\blocks\UIslave\src\BSplineEditor.h" />
+    <ClInclude Include="..\blocks\UIslave\src\Button.h" />
+    <ClInclude Include="..\blocks\UIslave\src\Canvas.h" />
+    <ClInclude Include="..\blocks\UIslave\src\CocoaWindowCanvas.h" />
+    <ClInclude Include="..\blocks\UIslave\src\ColorPicker.h" />
+    <ClInclude Include="..\blocks\UIslave\src\Colors.h" />
+    <ClInclude Include="..\blocks\UIslave\src\Control.h" />
+    <ClInclude Include="..\blocks\UIslave\src\Controls.h" />
+    <ClInclude Include="..\blocks\UIslave\src\ControlWithLabel.h" />
+    <ClInclude Include="..\blocks\UIslave\src\Dialer.h" />
+    <ClInclude Include="..\blocks\UIslave\src\Directions.h" />
+    <ClInclude Include="..\blocks\UIslave\src\Envelope.h" />
+    <ClInclude Include="..\blocks\UIslave\src\FontSizes.h" />
+    <ClInclude Include="..\blocks\UIslave\src\Fps.h" />
+    <ClInclude Include="..\blocks\UIslave\src\Globals.h" />
+    <ClInclude Include="..\blocks\UIslave\src\Graph.h" />
+    <ClInclude Include="..\blocks\UIslave\src\Helpers.h" />
+    <ClInclude Include="..\blocks\UIslave\src\Label.h" />
+    <ClInclude Include="..\blocks\UIslave\src\MultiSlider.h" />
+    <ClInclude Include="..\blocks\UIslave\src\Padding.h" />
+    <ClInclude Include="..\blocks\UIslave\src\Plotter.h" />
+    <ClInclude Include="..\blocks\UIslave\src\QuaternionOrderer.h" />
+    <ClInclude Include="..\blocks\UIslave\src\Radio.h" />
+    <ClInclude Include="..\blocks\UIslave\src\Range.h" />
+    <ClInclude Include="..\blocks\UIslave\src\RenderData.h" />
+    <ClInclude Include="..\blocks\UIslave\src\Responder.h" />
+    <ClInclude Include="..\blocks\UIslave\src\Slider.h" />
+    <ClInclude Include="..\blocks\UIslave\src\Spacer.h" />
+    <ClInclude Include="..\blocks\UIslave\src\Spectrum.h" />
+    <ClInclude Include="..\blocks\UIslave\src\States.h" />
+    <ClInclude Include="..\blocks\UIslave\src\SuperCanvas.h" />
+    <ClInclude Include="..\blocks\UIslave\src\TextInput.h" />
+    <ClInclude Include="..\blocks\UIslave\src\TextureView.h" />
+    <ClInclude Include="..\blocks\UIslave\src\Toggle.h" />
+    <ClInclude Include="..\blocks\UIslave\src\Triggers.h" />
+    <ClInclude Include="..\blocks\UIslave\src\UI.h" />
+    <ClInclude Include="..\blocks\UIslave\src\View.h" />
+    <ClInclude Include="..\blocks\UIslave\src\Waveform.h" />
+    <ClInclude Include="..\blocks\UIslave\src\WindowCanvas.h" />
+    <ClInclude Include="..\blocks\UIslave\src\XYPad.h" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets" />
+</Project>
