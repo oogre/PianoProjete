@@ -155,7 +155,7 @@ NoteDisplayRef Orage::addNoteDisplayOctave(vec2 origin){
 
 void Orage::setup(){
     contextMenu = SuperCanvas::create("context menu");
-    contextMenu->setSize(vec2(200, 300));
+    contextMenu->setSize(vec2(ModuleCommon::WIDTH, 300));
     contextMenu->addButton("Matte", false)->setCallback(
                                                         [this](bool a) {
                                                             if(a){

@@ -38,7 +38,7 @@ void ModuleVideo::setupFlip(){
     while(it != end){
         gl::Texture2dRef tex = it->second;
         ToggleRef b = Toggle::create("reverse"+to_string(it->first), false, Button::Format().label(false), ModuleVideo::UP, ModuleVideo::DOWN);
-        b->setSize( vec2( 25, 25 ) );
+        b->setSize( vec2( 15, 15 ) );
         b->setColorBack(ColorA(0, 0, 0, 0));
         b->setColorBounds(ColorA(0, 0, 0, 0));
         b->setColorBoundsOutline(ColorA(0, 0, 0, 0));

@@ -45,7 +45,7 @@ namespace ogre {
             mUi->setSize(size);
             
             ButtonRef b = Button::create( "Destroy", &shouldDestroy, Button::Format().label(false).align(Alignment::RIGHT), ModuleCommon::CLOSE);
-            b->setSize( vec2( 25, 25 ) );
+            b->setSize( vec2( 15, 15 ) );
             b->setColorBack(ColorA(0, 0, 0, 0));
             b->setColorBounds(ColorA(0, 0, 0, 0));
             b->setColorBoundsOutline(ColorA(0, 0, 0, 0));
