@@ -52,7 +52,7 @@ namespace ogre {
             static OscillatorRef create( const std::string name, vec2 origin, gl::Context * mMainWinCtx)
             {
                 Oscillator::COUNT++;
-                return OscillatorRef( new Oscillator( name, origin, vec2(200, 580), mMainWinCtx ) );
+                return OscillatorRef( new Oscillator( name, origin, vec2(WIDTH, 580), mMainWinCtx ) );
             }
         
             gl::UboRef          dataUbo;

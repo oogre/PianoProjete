@@ -50,7 +50,7 @@ namespace ogre {
         static ColorAdjustementRef create( const std::string name, vec2 origin, gl::Context * mMainWinCtx)
         {
             ColorAdjustement::COUNT++;
-            return ColorAdjustementRef( new ColorAdjustement( name, origin, vec2(200, 580), mMainWinCtx ) );
+            return ColorAdjustementRef( new ColorAdjustement( name, origin, vec2(WIDTH, 580), mMainWinCtx ) );
         }
         
         void setupShader() override;

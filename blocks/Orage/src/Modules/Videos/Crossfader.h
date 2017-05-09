@@ -52,7 +52,7 @@ namespace ogre {
         static CrossfaderRef create( const std::string name, vec2 origin, gl::Context * mMainWinCtx)
         {
             Crossfader::COUNT++;
-            return CrossfaderRef( new Crossfader( name, origin, vec2(300, 500), mMainWinCtx ) );
+            return CrossfaderRef( new Crossfader( name, origin, vec2(WIDTH*2, 500), mMainWinCtx ) );
         }
         
         

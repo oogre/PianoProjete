@@ -58,7 +58,7 @@ namespace ogre {
         static TileRef create( const std::string name, vec2 origin, gl::Context * mMainWinCtx)
         {
             Tile::COUNT++;
-            return TileRef( new Tile( name, origin, vec2(200, 580), mMainWinCtx ) );
+            return TileRef( new Tile( name, origin, vec2(WIDTH, 580), mMainWinCtx ) );
         }
         
         void setupShader() override;

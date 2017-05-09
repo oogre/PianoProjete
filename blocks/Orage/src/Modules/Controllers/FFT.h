@@ -45,7 +45,7 @@ namespace ogre {
         static FftRef create( const std::string name, vec2 origin, gl::Context * mMainWinCtx)
         {
             Fft::COUNT++;
-            return FftRef( new Fft( name, origin, vec2(200, 200), mMainWinCtx ) );
+            return FftRef( new Fft( name, origin, vec2(WIDTH*0.7, 200), mMainWinCtx ) );
         }
         
         void setupUI() override;

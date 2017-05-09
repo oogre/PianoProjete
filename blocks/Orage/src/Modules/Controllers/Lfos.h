@@ -48,7 +48,7 @@ namespace ogre {
         static LfosRef create( const std::string name, vec2 origin, gl::Context * mMainWinCtx)
         {
             Lfos::COUNT++;
-            return LfosRef( new Lfos( name, origin, vec2(200, 280), mMainWinCtx ) );
+            return LfosRef( new Lfos( name, origin, vec2(WIDTH*0.7, 280), mMainWinCtx ) );
         }
         
         void setupUI() override;

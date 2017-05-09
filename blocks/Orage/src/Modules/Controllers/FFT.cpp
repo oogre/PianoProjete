@@ -48,7 +48,6 @@ namespace ogre {
         }
         powerSpectrum[10] = 10.0f;
         setupUI();
-        
     }
     
     void Fft::update(){

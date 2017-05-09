@@ -25,6 +25,7 @@ namespace ogre {
         static int ID;
     public:
         static cinder::gl::TextureRef     CLOSE;
+        static const int WIDTH;
         ~ModuleCommon(){
             wires.remove(name);
             mUi->disable();
@@ -40,7 +41,7 @@ namespace ogre {
             
             mUi = SuperCanvas::create(name);
             
-            mUi->setOrigin(origin+vec2(0, 30));
+            mUi->setOrigin(origin);
             mUi->setSize(size);
             
             ButtonRef b = Button::create( "Destroy", &shouldDestroy, Button::Format().label(false).align(Alignment::RIGHT), ModuleCommon::CLOSE);

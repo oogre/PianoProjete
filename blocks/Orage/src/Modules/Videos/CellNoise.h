@@ -50,7 +50,7 @@ namespace ogre {
         static CellNoiseRef create( const std::string name, vec2 origin, gl::Context * mMainWinCtx)
         {
             CellNoise::COUNT++;
-            return CellNoiseRef( new CellNoise( name, origin, vec2(200, 580),  mMainWinCtx ) );
+            return CellNoiseRef( new CellNoise( name, origin, vec2(WIDTH, 580),  mMainWinCtx ) );
         }
         
         

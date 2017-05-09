@@ -59,7 +59,7 @@ namespace ogre {
         static CloudRef create( const std::string name, vec2 origin, gl::Context * mMainWinCtx)
         {
             Cloud::COUNT++;
-            return CloudRef( new Cloud( name, origin, vec2(200, 580),  mMainWinCtx ) );
+            return CloudRef( new Cloud( name, origin, vec2(WIDTH, 580),  mMainWinCtx ) );
         }
         
         

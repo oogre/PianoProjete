@@ -67,7 +67,7 @@ namespace ogre {
         string id = toString(COUNT);
         CanvasRef v = Canvas::create("LFO"+id, ci::app::getWindow());
         mUi->addSubViewDown(Toggle::create("active "+id, &(lfoDatas.active), Button::Format().label(true)));
-        mUi->addSubViewEastOf(Toggle::create("reverse "+id, &(lfoDatas.reverse), Button::Format().label(true)), "active "+id);
+        mUi->addSubViewEastOf(Toggle::create("<-> "+id, &(lfoDatas.reverse), Button::Format().label(true)), "active "+id);
         
         mUi->addSpacer(false);
         mUi->addSpacer(false);

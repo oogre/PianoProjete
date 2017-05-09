@@ -49,7 +49,7 @@ namespace ogre {
         static InvertRef create( const std::string name, vec2 origin, gl::Context * mMainWinCtx)
         {
             Invert::COUNT++;
-            return InvertRef( new Invert( name, origin, vec2(200, 580), mMainWinCtx ) );
+            return InvertRef( new Invert( name, origin, vec2(WIDTH, 580), mMainWinCtx ) );
         }
         
         void setupShader() override;

@@ -154,15 +154,121 @@ NoteDisplayRef Orage::addNoteDisplayOctave(vec2 origin){
 
 
 void Orage::setup(){
-    addPianoInput(vec2(0, 0));
-    addHandSplitter(vec2(0, 200));
-    addPositionExtractor(vec2(300, 0));
-    addNoteDisplayKeyboard(vec2(600, 0));
-    addNoteDisplayOctave(vec2(900, 0));
-    addOscillator(vec2(1200, 0));
-     addTile(vec2(1500, 0));
-   // addOscillator(vec2(200, 0));
+    contextMenu = SuperCanvas::create("context menu");
+    contextMenu->setSize(vec2(200, 300));
+    contextMenu->addButton("Matte", false)->setCallback(
+                                                        [this](bool a) {
+                                                            if(a){
+                                                                addMatte(contextMenu->getOrigin());
+                                                            }
+                                                        });
+    contextMenu->addButton("OSCILLATOR", false)->setCallback(
+                                                             [this](bool a) {
+                                                                 if(a){
+                                                                     addOscillator(contextMenu->getOrigin());
+                                                                 }
+                                                             });
+    contextMenu->addButton("Cloud", false)->setCallback(
+                                                        [this](bool a) {
+                                                            if(a){
+                                                                addCloud(contextMenu->getOrigin());
+                                                            }
+                                                        });
+    contextMenu->addSpacer(false);
+    
+    contextMenu->addButton("Mosher", false)->setCallback(
+                                                         [this](bool a) {
+                                                             if(a){
+                                                                 addMosher(contextMenu->getOrigin());
+                                                             }
+                                                         });
+    
+    contextMenu->addButton("Splitter", false)->setCallback(
+                                                           [this](bool a) {
+                                                               if(a){
+                                                                   addSpliter(contextMenu->getOrigin());
+                                                               }
+                                                           });
+    
+    contextMenu->addButton("Crossfader", false)->setCallback(
+                                                             [this](bool a) {
+                                                                 if(a){
+                                                                     addCrossfader(contextMenu->getOrigin());
+                                                                 }
+                                                             });
+    
+    contextMenu->addSpacer(false);
+    
+    contextMenu->addButton("Tile", false)->setCallback(
+                                                       [this](bool a) {
+                                                           if(a){
+                                                               addTile(contextMenu->getOrigin());
+                                                           }
+                                                       });
+    contextMenu->addButton("Color Adjustement", false)->setCallback(
+                                                                    [this](bool a) {
+                                                                        if(a){
+                                                                            addColorAdjustement(contextMenu->getOrigin());
+                                                                        }
+                                                                    });
+
+    contextMenu->addButton("Invert", false)->setCallback(
+                                                         [this](bool a) {
+                                                             if(a){
+                                                                 addInvert(contextMenu->getOrigin());
+                                                             }
+                                                         });
+
+    contextMenu->addSpacer();
+    
+    contextMenu->addButton("LFO", false)->setCallback(
+                                                      [this](bool a) {
+                                                          if(a){
+                                                              addLfos(contextMenu->getOrigin());
+                                                          }
+                                                      });
+    contextMenu->addButton("FFT", false)->setCallback(
+                                                      [this](bool a) {
+                                                          if(a){
+                                                              addFft(contextMenu->getOrigin());
+                                                          }
+                                                      });
+    
+    contextMenu->addSpacer();
+    
+    contextMenu->addButton("Piano In", false)->setCallback(
+                                                        [this](bool a) {
+                                                            if(a){
+                                                                addPianoInput(contextMenu->getOrigin());
+                                                            }
+                                                        });
+    contextMenu->addButton("Piano Splitter", false)->setCallback(
+                                                        [this](bool a) {
+                                                            if(a){
+                                                                addHandSplitter(contextMenu->getOrigin());
+                                                            }
+                                                        });
+    contextMenu->addButton("Data extractor", false)->setCallback(
+                                                        [this](bool a) {
+                                                            if(a){
+                                                                addPositionExtractor(contextMenu->getOrigin());
+                                                            }
+                                                        });
+    contextMenu->addButton("Display Note", false)->setCallback(
+                                                        [this](bool a) {
+                                                            if(a){
+                                                                addNoteDisplayKeyboard(contextMenu->getOrigin());
+                                                            }
+                                                        });
+    contextMenu->addButton("Display Octave", false)->setCallback(
+                                                        [this](bool a) {
+                                                            if(a){
+                                                                addNoteDisplayOctave(contextMenu->getOrigin());
+                                                            }
+                                                        });
+    contextMenu->setVisible(false);
 }
+
 
 void Orage::update(){
     auto it = modules.begin();
@@ -175,6 +281,7 @@ void Orage::update(){
             it ++;
         }
     }
+    contextMenu->update();
 }
 
 
@@ -189,4 +296,5 @@ void Orage::draw(){
         (*it)->mUi->update();
         (*it)->mUi->draw();
     }
+    contextMenu->draw();
 }

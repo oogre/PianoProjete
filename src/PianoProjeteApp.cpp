@@ -20,36 +20,18 @@ class PianoProjeteApp : public App {
     static void prepareSettings( Settings *settings );
     void setup() override;
     void mouseMove( MouseEvent event ) override;
+    void mouseDown( MouseEvent event ) override;
     void update() override;
     void draw() override;
     
     void keyUp( KeyEvent event) override;
-    
-    void addOscillator();
-    void addTile();
-    //void addSyphonInput();
-    void addMosher();
-    void addMatte();
-    void addFft();
-    void addSpliter();
-    void addCrossfader();
-    void addLfos();
-    void addKeyMixer();
-    void addColorAdjustement();
-    void addInvert();
-    void addCellNoise();
-    void addCloud();
-    //void addOutput();
-    void addTrail();
-
 };
 
 void PianoProjeteApp::prepareSettings( Settings *settings )
 {
-    settings->setWindowSize( 1920, 1440 );
-    settings->setFullScreen(true, FullScreenOptions().display(FullScreenOptions().getDisplay()));
-    //settings->setFullScreen( true );
-    //settings->setBorderless();
+    settings->setWindowSize( 800, 600 );
+    settings->setWindowPos(0, 0);
+   // settings->setFullScreen(true, FullScreenOptions().display(FullScreenOptions().getDisplay()));
 }
 
 void PianoProjeteApp::setup()
@@ -73,65 +55,20 @@ void PianoProjeteApp::draw()
 void PianoProjeteApp::mouseMove( MouseEvent event ) {
     mMouseLoc = event.getPos();
 }
+void PianoProjeteApp::mouseDown( MouseEvent event ) {
+    if(event.isRightDown()){
+        orage->contextMenu->setOrigin(event.getPos());
+        orage->contextMenu->setVisible(true);
+    }else{
+        if(orage->contextMenu->isVisible()){
+            orage->contextMenu->setVisible(false);
+        }
+    }
+}
+
 
 void PianoProjeteApp::keyUp( KeyEvent event){
     wires.keyUp(event);
 }
-
-void PianoProjeteApp::addOscillator(){
-    orage->addOscillator(vec2(0, 0));
-}
-
-void PianoProjeteApp::addTile(){
-    orage->addTile(vec2(0, 0));
-}
-
-void PianoProjeteApp::addMosher(){
-    orage->addMosher(vec2(0, 0));
-}
-
-void PianoProjeteApp::addMatte(){
-    orage->addMatte(vec2(0, 0));
-}
-
-void PianoProjeteApp::addSpliter(){
-    orage->addSpliter(vec2(0, 0));
-}
-void PianoProjeteApp::addFft(){
-    orage->addFft(vec2(0, 0));
-}
-
-void PianoProjeteApp::addCrossfader(){
-    orage->addCrossfader(vec2(0, 0));
-}
-
-void PianoProjeteApp::addLfos(){
-    orage->addLfos(vec2(0, 0));
-}
-
-void PianoProjeteApp::addKeyMixer(){
-    //orage->addKeyMixer(vec2(0, 0));
-}
-
-void PianoProjeteApp::addColorAdjustement(){
-    orage->addColorAdjustement(vec2(0, 0));
-}
-
-void PianoProjeteApp::addInvert(){
-    orage->addInvert(vec2(0, 0));
-}
-
-void PianoProjeteApp::addCellNoise(){
-    //orage->addCellNoise(vec2(0, 0));
-}
-
-void PianoProjeteApp::addCloud(){
-    orage->addCloud(vec2(0, 0));
-}
-
-void PianoProjeteApp::addTrail(){
-    // orage->addTrail(vec2(0, 0));
-}
-
 
 CINDER_APP( PianoProjeteApp, RendererGl, &PianoProjeteApp::prepareSettings )

@@ -51,7 +51,7 @@ namespace ogre {
         static KeyMixerRef create( const std::string name, vec2 origin, gl::Context * mMainWinCtx)
         {
             KeyMixer::COUNT++;
-            return KeyMixerRef( new KeyMixer( name, origin, vec2(300, 500), mMainWinCtx ) );
+            return KeyMixerRef( new KeyMixer( name, origin, vec2(WIDTH*2, 500), mMainWinCtx ) );
         }
         
         void setupShader() override;

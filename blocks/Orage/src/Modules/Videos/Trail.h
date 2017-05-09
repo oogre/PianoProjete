@@ -50,7 +50,7 @@ namespace ogre {
         static TrailRef create( const std::string name, vec2 origin, gl::Context * mMainWinCtx)
         {
             Trail::COUNT++;
-            return TrailRef( new Trail( name, origin, vec2(200, 580), mMainWinCtx ) );
+            return TrailRef( new Trail( name, origin, vec2(WIDTH, 580), mMainWinCtx ) );
         }
         
         void setupShader() override;

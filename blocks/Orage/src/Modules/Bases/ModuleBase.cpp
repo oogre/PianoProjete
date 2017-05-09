@@ -11,6 +11,7 @@
 
 namespace ogre {
 
+const int ModuleCommon::WIDTH = 150;
 int ModuleCommon::ID = 0;
 
 cinder::gl::TextureRef    ModuleCommon::CLOSE;

@@ -68,10 +68,13 @@ namespace ogre {
                 ref->setup();
                 return ref;
             }
-        
+            SuperCanvasRef  contextMenu;
             vector<ModuleRef> modules;
         
             cinder::gl::Texture2dRef debug;
+        
+            
+        
         
             OscillatorRef addOscillator(vec2 origin);
             TileRef addTile(vec2 origin);

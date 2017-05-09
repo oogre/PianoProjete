@@ -49,7 +49,7 @@ namespace ogre {
         static MosherRef create( const std::string name, vec2 origin, gl::Context * mMainWinCtx)
         {
             Mosher::COUNT++;
-            return MosherRef( new Mosher( name, origin, vec2(200, 580), mMainWinCtx ) );
+            return MosherRef( new Mosher( name, origin, vec2(WIDTH, 580), mMainWinCtx ) );
         }
         
         

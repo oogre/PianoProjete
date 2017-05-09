@@ -39,7 +39,7 @@ namespace ogre {
         static SpliterRef create( const std::string name, vec2 origin, gl::Context * mMainWinCtx)
         {
             Spliter::COUNT++;
-            return SpliterRef( new Spliter( name, origin, vec2(200, 580),  mMainWinCtx ) );
+            return SpliterRef( new Spliter( name, origin, vec2(WIDTH, 580),  mMainWinCtx ) );
         }
         
         

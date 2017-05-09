@@ -47,7 +47,7 @@ namespace ogre {
         static MatteRef create( const std::string name, vec2 origin, gl::Context * mMainWinCtx)
         {
             Matte::COUNT++;
-            return MatteRef( new Matte( name, origin, vec2(220, 155), mMainWinCtx ) );
+            return MatteRef( new Matte( name, origin, vec2(WIDTH, 155), mMainWinCtx ) );
         }
         
         gl::FboRef			mFbo;
