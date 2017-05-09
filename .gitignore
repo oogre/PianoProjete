@@ -1,0 +1,4 @@
+xcode/build/*
+vc2015/x64/*
+vc2015/build/*
+vc2015/.vs/*
