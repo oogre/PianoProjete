@@ -46,13 +46,14 @@ namespace ogre {
         
         Cloud(string name, vec2 origin, vec2 size, gl::Context * mMainWinCtx);
     public:
-        
+        static int COUNT;
         ~Cloud(){
+            data.~CloudData();
+            dataUbo.reset();
             mFbo.reset();
             mShader.reset();
             mMainWinCtx = nullptr;
         }
-        static int COUNT;
         
         typedef std::shared_ptr<class Cloud> CloudRef;
         

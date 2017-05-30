@@ -17,64 +17,30 @@
 #endif
 
 #include "UI.h"
-#include "Wires.h"
-#include "Tools.h"
-
-#include "Oscillator.h"
-#include "Matte.h"
-#include "Cloud.h"
-
-#include "Tile.h"
-#include "Spliter.h"
-#include "ColorAdjustement.h"
-#include "Invert.h"
-
-//#include "SyphonInput.h"
-#include "Mosher.h"
-#include "Crossfader.h"
-//#include "Output.h"
+#include "SuperModule.h"
 
 
-#include "Lfos.h"
-#include "FFT.h"
-
-#include "PianoInput.h"
-#include "HandSplitter.h"
-#include "PositionExtractor.h"
-#include "NoteDisplay.h"
-
-/*
-
-#include "KeyMixer.h"
-
-
-#include "CellNoise.h"
-#include "Trail.h"
- */
-
-#include "cinder/audio/audio.h"
+//#include "cinder/audio/audio.h"
 namespace ogre {
     
     typedef std::shared_ptr<class Orage> OrageRef;
     
     class Orage/* : public Canvas */{
-        //AppCocoaView * parent;
         gl::Context * mMainWinCtx;
-        Orage(string name, /*AppCocoaView * parent, */gl::Context * mMainWinCtx);
+        Orage(string name, gl::Context * mMainWinCtx);
         public:
-            static OrageRef create( std::string name, /*AppCocoaView * parent, */gl::Context * mMainWinCtx)
+            static OrageRef create( std::string name, gl::Context * mMainWinCtx)
             {
-                OrageRef ref = OrageRef( new Orage( name, /*parent,*/ mMainWinCtx ) );
+                OrageRef ref = OrageRef( new Orage( name, mMainWinCtx ) );
                 ref->setup();
                 return ref;
             }
             SuperCanvasRef  contextMenu;
+            SuperCanvasRef  groupMenu;
             vector<ModuleRef> modules;
-        
+            vector<SuperModuleRef> groupedModules;
+            SuperModuleRef selectedModules;
             cinder::gl::Texture2dRef debug;
-        
-            
-        
         
             OscillatorRef addOscillator(vec2 origin);
             TileRef addTile(vec2 origin);
@@ -85,6 +51,10 @@ namespace ogre {
             ColorAdjustementRef addColorAdjustement(vec2 origin);
             InvertRef addInvert(vec2 origin);
             CloudRef addCloud(vec2 origin);
+            SyphonInputRef addSyphonInput(vec2 origin);
+            FreezerRef addFreezer(vec2 origin);
+
+            OutputRef addOutput(vec2 origin);
         
             LfosRef addLfos(vec2 origin);
             FftRef addFft(vec2 origin);
@@ -94,6 +64,8 @@ namespace ogre {
             PositionExtractorRef addPositionExtractor(vec2 origin);
             NoteDisplayRef addNoteDisplayKeyboard(vec2 origin);
             NoteDisplayRef addNoteDisplayOctave(vec2 origin);
+            DynamicAnalyserRef addDynamicAnalyser(vec2 origin);
+            LastNoteExtractorRef addLastNoteExtractor(vec2 origin);
             /*
             
             
@@ -107,7 +79,14 @@ namespace ogre {
         
             void setup();
             void update();
-            void draw();
+            void draw(bool selectorActive, Rectf selector);
+            void openContextMenu(vec2 position);
+            void closeContextMenu();
+            void openGroupMenu(vec2 position);
+            void closeGroupMenu();
+            ModuleRef isOnModule(vec2 location);
+            void selectModuleByArea(Rectf selector);
+            void resetSelectModule();
     };
 }
 

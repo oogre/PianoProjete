@@ -23,14 +23,24 @@ using namespace std;
 namespace ogre {
     class ModuleCommon{
         static int ID;
+        bool firstUpdate = true;
+        float defaultAlpha = 0.0f;
     public:
+        bool selected = false;
         static cinder::gl::TextureRef     CLOSE;
         static const int WIDTH;
+        int id ;
+        bool shouldDestroy = false;
+        string name;
+        SuperCanvasRef mUiabove;
+        SuperCanvasRef mUi;
+        
         ~ModuleCommon(){
             wires.remove(name);
-            mUi->disable();
+            //mUi->disable();
             mUi->clear();
             mUi.reset();
+            mUi = nullptr;
         }
         ModuleCommon(std::string name, vec2 origin, vec2 size){
             id = ID++;
@@ -39,10 +49,15 @@ namespace ogre {
                 ModuleCommon::CLOSE = gl::Texture::create(loadImage(loadAsset("/textures/close.png")));
             }
             
-            mUi = SuperCanvas::create(name);
+            //mUiabove = SuperCanvas::create(name+"UP");
+            //mUiabove->setSize(size);
             
-            mUi->setOrigin(origin);
+            mUi = SuperCanvas::create(name);
+            //mUiabove->addSubView(mUi);
+            
+            //mUiabove->addSubViewToHeader(mUi);
             mUi->setSize(size);
+            mUi->setOrigin(origin);
             
             ButtonRef b = Button::create( "Destroy", &shouldDestroy, Button::Format().label(false).align(Alignment::RIGHT), ModuleCommon::CLOSE);
             b->setSize( vec2( 15, 15 ) );
@@ -57,15 +72,22 @@ namespace ogre {
             mUi->addSubViewToHeader(b);
 
         }
-        int id ;
-        bool shouldDestroy = false;
-        string name;
-        SuperCanvasRef mUi;
         
         
         virtual void setupUI(){};
         virtual void setup(){};
         virtual void update(){
+            if(firstUpdate){
+                defaultAlpha = mUi->getColorBack().a;
+                firstUpdate = false;
+            }
+            ColorA c = mUi->getColorBack();
+            if(selected){
+                c.a = defaultAlpha + 0.3;
+            }else{
+                c.a = defaultAlpha;
+            }
+            mUi->setColorBack(c);
             mUi->update();
         };
     };
@@ -77,7 +99,8 @@ namespace ogre {
         
         map<char, DataType> inputs;
         map<char, DataType> outputs;
-        
+        int inputLen;
+        int outputLen;
         vector<ButtonRef> inputBtns;
         vector<ButtonRef> outputBtns;
         
@@ -86,11 +109,13 @@ namespace ogre {
             auto itin = inputs.begin();
             while(itin != inputs.end()){
                 itin->second.reset();
+                itin->second = nullptr;
                 itin++;
             }
             auto itout = outputs.begin();
             while(itout != outputs.end()){
                 itout->second.reset();
+                itout->second = nullptr;
                 itout++;
             }
             inputs.clear();

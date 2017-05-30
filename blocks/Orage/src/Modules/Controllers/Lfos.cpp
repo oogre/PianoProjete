@@ -78,17 +78,19 @@ namespace ogre {
         mUi->addSpacer(false);
         mUi->addSpacer(false);
         
+        mUi->addSubViewToHeader(tools.addSlider(mUi, "saw "+id, &(lfoDatas.saw), 0, 1));
+        mUi->addSubViewToHeader(tools.addSlider(mUi, "sine "+id, &(lfoDatas.sine), -1, 1));
+        mUi->addSubViewToHeader(tools.addSlider(mUi, "rect "+id, &(lfoDatas.rect), 0, 1));
+        
+        mUi->addSpacer(false);
+        mUi->addSpacer(false);
+        
         tools.addSlider(mUi, "delay "+id, &(lfoDatas.delay), 0, 10);
         tools.addSlider(mUi, "multi "+id, &(lfoDatas.clk_multi), 1, 20);
         tools.addSlider(mUi, "div "+id, &(lfoDatas.clk_div), 1, 20);
         tools.addSlider(mUi, "exp "+id, &(lfoDatas.exp), 1, 9);
             
-        mUi->addSpacer(false);
-        mUi->addSpacer(false);
         
-        tools.addSlider(mUi, "saw "+id, &(lfoDatas.saw), 0, 1);
-        tools.addSlider(mUi, "sine "+id, &(lfoDatas.sine), -1, 1);
-        tools.addSlider(mUi, "rect "+id, &(lfoDatas.rect), 0, 1);
         
         mUi->setMinified(false);
     }

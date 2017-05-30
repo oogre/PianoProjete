@@ -43,7 +43,7 @@ app::WindowRef WindowCanvas::createWindow()
 		mWindowRef = nullptr;
 	} );
 	window->getSignalDraw().connect( [this, window] {
-		gl::setMatricesWindow( window->getSize() );
+		//gl::setMatricesWindow( window->getSize() );
 		gl::clear( ColorA::black() );
 	} );
 	mValidRef = true;

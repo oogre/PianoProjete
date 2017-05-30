@@ -20,19 +20,18 @@ namespace ogre {
     class Spliter : public ModuleVideo{
         gl::Context * mMainWinCtx;
         
-        
         gl::FboRef			mFbo;
         gl::GlslProgRef     mShader;
         
         Spliter(string name, vec2 origin, vec2 size, gl::Context * mMainWinCtx);
     public:
+        static int COUNT;
         
         ~Spliter(){
             mFbo.reset();
             mShader.reset();
             mMainWinCtx = nullptr;
         }
-        static int COUNT;
         
         typedef std::shared_ptr<class Spliter> SpliterRef;
         

@@ -32,7 +32,7 @@ namespace ogre {
         ColorAT<float> YPbPr2Color(vec3 YPbPr);
         void updateColor(float a);
     public:
-        
+        static int COUNT;
         ~Matte(){
             mFbo.reset();
             sY.reset();
@@ -40,7 +40,6 @@ namespace ogre {
             sPr.reset();
             mMainWinCtx = nullptr;
         }
-        static int COUNT;
         
         typedef std::shared_ptr<class Matte> MatteRef;
         

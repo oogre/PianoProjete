@@ -11,14 +11,15 @@
 
 namespace ogre {
 
-const int ModuleCommon::WIDTH = 100;
+const int ModuleCommon::WIDTH = 150;
 int ModuleCommon::ID = 0;
 
 cinder::gl::TextureRef    ModuleCommon::CLOSE;
 
 template<typename DataType>
 ModuleBase<DataType>::ModuleBase(const std::string name, vec2 origin, vec2 size, const int & nInput, const int & nOutput ):ModuleCommon(name, origin, size){
-    
+    inputLen = nInput;
+    outputLen = nOutput;
     for(int i = 0 ; i < nInput ; i ++){
         char current = ((char)((int)'A'+i));
         inputs[current] = nullptr;

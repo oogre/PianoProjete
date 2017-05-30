@@ -28,7 +28,6 @@ namespace ogre {
         } data;
         
         
-        
         gl::UboRef          dataUbo;
         gl::FboRef			mFbo;
         gl::GlslProgRef     mShader;
@@ -37,6 +36,7 @@ namespace ogre {
         
     public:
         ~Invert(){
+            data.~InvertData();
             dataUbo.reset();
             mFbo.reset();
             mShader.reset();

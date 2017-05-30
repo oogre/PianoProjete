@@ -2,3 +2,9 @@ xcode/build/*
 vc2015/x64/*
 vc2015/build/*
 vc2015/.vs/*
+arduino/PP_2017.xcodeproj/*
+arduino/PP_2017/Configurations/*
+arduino/PP_2017/Doxyfile
+arduino/PP_2017/Makefile
+arduino/PP_2017/ReadMe.txt
+arduino/PP_2017/main.cpp

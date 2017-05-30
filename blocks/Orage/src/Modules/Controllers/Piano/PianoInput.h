@@ -25,16 +25,16 @@ namespace ogre {
         
         PianoInput(string name, vec2 origin, vec2 size, gl::Context * mMainWinCtx);
     public:
-        const static unsigned int NOTE_ON = 0x90;
-        const static unsigned int NOTE_OFF = 0x80;
-        const static unsigned int NOTE_NULL = 0x00;
-        const static unsigned int CHANNEL_LEN = 0x0f;
+        static int COUNT;
+        
+        const static uint8_t NOTE_ON = 0x90;
+        const static uint8_t NOTE_OFF = 0x80;
+        const static uint8_t NOTE_NULL = 0x00;
+        const static uint8_t CHANNEL_LEN = 0x10;
         
         NotesetRef playingNotes;
-        
         ~PianoInput(){
         }
-        static int COUNT;
         typedef std::shared_ptr<class PianoInput> PianoInputRef;
         static PianoInputRef singleton;
         static PianoInputRef create( const std::string name, vec2 origin, gl::Context * mMainWinCtx)

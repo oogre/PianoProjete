@@ -23,13 +23,13 @@ namespace ogre {
     class Tools{
 
         public : 
-        SliderfRef addSlider(CanvasRef mUi, string name, float * data, float min, float max, int width = 0 ){
+        SliderfRef addSlider(CanvasRef mUi, string name, float * data, float min, float max, int width = 0){
             Wires * _w = &wires;
             
             width = (int) (width != 0 ? width : mUi->getWidth() - 18 - mUi->mPadding.mRight - 2 * mUi->mPadding.mLeft);
             
             SliderfRef s = Sliderf::create( name, data, min, max, Sliderf::Format().precision(2).label(true).crossFader(true));
-            s->setSize( vec2( width, 12 ) );
+            s->setSize( vec2( width-5, 15 ) );
             
             
             RangefRef r = Rangef::create(name+" Limiter",  min, max,  min, max, Rangef::Format().label(false));
@@ -37,10 +37,10 @@ namespace ogre {
                            [s](float a, float b) {
                                s->setMinAndMax(a, b, true);
                            });
-            r->setSize( vec2( width, 7 ) );
+            r->setSize( vec2( width-5, 10 ) );
             
             ButtonRef b = Button::create( name+" InputCV", false, Button::Format().label(false));
-            b->setSize( vec2( 20, 20 ) );
+            b->setSize( vec2( 23, 23 ) );
             b->setCallback(
                            [s, b, _w, mUi](bool a) {
                                if(a){
@@ -54,6 +54,9 @@ namespace ogre {
             mUi->addSubViewSouthOf(r, name);
             return s;
         }
+
+        
+        
         
         SliderfRef addSlider2(CanvasRef mUi, string name, float * data, float min, float max, int width = 0 ){
             Wires * _w = &wires;
@@ -77,6 +80,34 @@ namespace ogre {
             mUi->addSubViewRight(b);
             return s;
         }
+        
+        /*
+        SliderfRef addXYSlider(CanvasRef mUi, string name, vec2 * data, int width = 0 ){
+            Wires * _w = &wires;
+            
+            width = (int) (width != 0 ? width : mUi->getWidth() - 18 - mUi->mPadding.mRight - 2 * mUi->mPadding.mLeft);
+            
+            
+            XYPadRef s = XYPad::create( name, data, XYPad::Format().label(false));
+            //s->setSize( vec2( width, 12 ) );
+            
+            
+            ButtonRef b = Button::create( name+" InputCV", false, Button::Format().label(false));
+            b->setSize( vec2( 20, 20 ) );
+            b->setCallback(
+                           [s, b, _w, mUi](bool a) {
+                               if(a){
+                                   _w->clickOnLinker(mUi->getName(), s, b);
+                               }
+                           });
+            b->setColorFillHighlight(ColorA::black());
+            b->setColorFill(ColorA::black());
+            mUi->addSubViewDown(s);
+            mUi->addSubViewRight(b);
+            mUi->addSubViewSouthOf(r, name);
+            return s;
+        }*/
+
         
         string to_roman(unsigned int value)
         {

@@ -4,8 +4,8 @@ namespace reza {
 namespace ui {
 
 enum class FontSize {
-	SMALL = 5,
-	MEDIUM = 8,
+	SMALL = 7,
+	MEDIUM = 10,
 	LARGE = 14
 };
 }

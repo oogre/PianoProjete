@@ -15,12 +15,16 @@ class PianoProjeteApp : public App {
     OrageRef        orage;
     double          lastclick = 0.0;
     ivec2           mMouseLoc;
+    Rectf           mMouseSelector;
+    bool            mMouseDrag = false;
     gl::Context   * mMainWinCtx;
   public:
     static void prepareSettings( Settings *settings );
     void setup() override;
     void mouseMove( MouseEvent event ) override;
     void mouseDown( MouseEvent event ) override;
+    void mouseUp( MouseEvent event ) override;
+    void mouseDrag( MouseEvent event ) override;
     void update() override;
     void draw() override;
     
@@ -36,8 +40,9 @@ void PianoProjeteApp::prepareSettings( Settings *settings )
 
 void PianoProjeteApp::setup()
 {
+    mMainWinCtx = gl::Context::getCurrent();
     gl::clear(ColorAT<float>(0, 0, 0, 0));
-    orage = Orage::create("Piano Projeté", gl::Context::getCurrent());
+    orage = Orage::create("Piano Projeté", mMainWinCtx);
 }
 
 void PianoProjeteApp::update()
@@ -47,27 +52,79 @@ void PianoProjeteApp::update()
 
 void PianoProjeteApp::draw()
 {
+    if(mMainWinCtx != gl::Context::getCurrent()){
+        return;
+    }
+
     gl::clear(ColorAT<float>(0, 0, 0, 0));
-    orage->draw();
+    
+    orage->draw(mMouseDrag, mMouseSelector);
     wires.draw(mMouseLoc);
 }
 
 void PianoProjeteApp::mouseMove( MouseEvent event ) {
+    if(mMainWinCtx != gl::Context::getCurrent()){
+        return;
+    }
     mMouseLoc = event.getPos();
 }
 void PianoProjeteApp::mouseDown( MouseEvent event ) {
-    if(event.isRightDown()){
-        orage->contextMenu->setOrigin(event.getPos());
-        orage->contextMenu->setVisible(true);
-    }else{
-        if(orage->contextMenu->isVisible()){
-            orage->contextMenu->setVisible(false);
+    if(mMainWinCtx != gl::Context::getCurrent()){
+        if(getElapsedSeconds()  - lastclick < 0.2){
+            setFullScreen(!isFullScreen());
+        }
+        lastclick = getElapsedSeconds();
+        return;
+    }
+    /*
+    ModuleRef clicked = orage->isOnModule(event.getPos());
+    if(clicked){
+        mMouseDrag = false;
+        if(event.isRightDown()){
+            orage->openGroupMenu(event.getPos());
+        }else{
+
         }
     }
+    else{*/
+        if(event.isRightDown()){
+            orage->openContextMenu(event.getPos());
+            //orage->resetSelectModule();
+            mMouseDrag = false;
+        }else{
+            //mMouseDrag = true;
+            mMouseSelector.y1 = mMouseSelector.y2 = event.getY();
+            mMouseSelector.x1 = mMouseSelector.x2 = event.getX();
+        }
+    //}
+    
+    if(event.isLeftDown()){
+        orage->closeContextMenu();
+        //orage->closeGroupMenu();
+    }
 }
+void PianoProjeteApp::mouseUp( MouseEvent event ) {
+    if(mMainWinCtx != gl::Context::getCurrent()){
+        return;
+    }
+    if(mMouseDrag){
+        //orage->selectModuleByArea(mMouseSelector);
+    }
+    mMouseDrag = false;
+};
 
+void PianoProjeteApp::mouseDrag( MouseEvent event ) {
+    if(mMainWinCtx != gl::Context::getCurrent()){
+        return;
+    }
+    mMouseSelector.y2 = event.getY();
+    mMouseSelector.x2 = event.getX();
+};
 
 void PianoProjeteApp::keyUp( KeyEvent event){
+    if(mMainWinCtx != gl::Context::getCurrent()){
+        return;
+    }
     wires.keyUp(event);
 }
 

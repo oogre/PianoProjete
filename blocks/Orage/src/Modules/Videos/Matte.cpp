@@ -78,7 +78,12 @@ namespace ogre {
     
     void Matte::setupUI(){
         ModuleVideo::setupUI();
-
+        mUi->setColorBack(ColorAT<float>(vec4(.4f, .4f, .4f, .4f)));
+        //mUi->setColorFill(ColorAT<float>(vec4(.8f, .9f, 1.f, .6f)));
+//        mUi->setColorFillHighlight(ColorAT<float>(vec4(.3f, .9f, 1.f, 1.f)));
+        
+        
+        
         sY = tools.addSlider(mUi, "Y", &(YPbPr.x), .0f, 1.f);
         sPb = tools.addSlider(mUi, "Pb", &(YPbPr.y), -0.5f, 0.5f);
         sPr = tools.addSlider(mUi, "Pr", &(YPbPr.z), -0.5f, 0.5f);

@@ -55,7 +55,20 @@
 		76ABDDB5821B49D892D65FE6 /* KeyMixer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E607884DCF24400681B73751 /* KeyMixer.cpp */; };
 		8033B0DAC6694F96BFD18A35 /* Dialer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FB5190331EDD4B5E843BD167 /* Dialer.cpp */; };
 		85D4B4812CA545008D1F624C /* Wires.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0CEC55F32821410B87FEE541 /* Wires.cpp */; };
+		888AD3B51ECC828C00179240 /* SuperModule.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 888AD3B31ECC828C00179240 /* SuperModule.cpp */; };
+		88A8896F1EDC308D007F4B0C /* SyphonNameboundClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 88A889651EDC308D007F4B0C /* SyphonNameboundClient.m */; };
+		88A889701EDC308D007F4B0C /* syphonClient.mm in Sources */ = {isa = PBXBuildFile; fileRef = 88A889691EDC308D007F4B0C /* syphonClient.mm */; };
+		88A889711EDC308D007F4B0C /* syphonServer.mm in Sources */ = {isa = PBXBuildFile; fileRef = 88A8896B1EDC308D007F4B0C /* syphonServer.mm */; };
+		88A889721EDC308D007F4B0C /* syphonServerDirectory.mm in Sources */ = {isa = PBXBuildFile; fileRef = 88A8896D1EDC308D007F4B0C /* syphonServerDirectory.mm */; };
+		88A889751EDC30F6007F4B0C /* SyphonInput.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 88A889731EDC30F6007F4B0C /* SyphonInput.cpp */; };
+		88A889761EDC3510007F4B0C /* Syphon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88A889631EDC308D007F4B0C /* Syphon.framework */; };
+		88A889771EDC3510007F4B0C /* Syphon.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 88A889631EDC308D007F4B0C /* Syphon.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		88A8897B1EDC47D7007F4B0C /* Freezer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 88A889791EDC47D7007F4B0C /* Freezer.cpp */; };
+		88A8897D1EDC494E007F4B0C /* assets in Resources */ = {isa = PBXBuildFile; fileRef = 88A8897C1EDC494D007F4B0C /* assets */; };
+		88A889801EDCB652007F4B0C /* DynamicAnalyser.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 88A8897E1EDCB652007F4B0C /* DynamicAnalyser.cpp */; };
+		88A889831EDD765B007F4B0C /* LastNoteExtractor.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 88A889811EDD765B007F4B0C /* LastNoteExtractor.cpp */; };
 		88AC2DA40BC4441CA9DF5B0B /* Label.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2E1089BA49DF4B3ABD6B9E92 /* Label.cpp */; };
+		88D0A08A1ECF2F1600BE6418 /* Output.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 88D0A0881ECF2F1600BE6418 /* Output.cpp */; };
 		8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */; };
 		9AC02B2DEE2745F0AED3D7A9 /* WindowCanvas.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3BF6AED054104899B1DA04A3 /* WindowCanvas.cpp */; };
 		A8EA15C5111844118A8CBCA3 /* Canvas.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 77F2827F0BF347E29F073892 /* Canvas.cpp */; };
@@ -81,6 +94,20 @@
 		F1A0A18345A144D9AAAFCDBF /* CellNoise.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 552A415828FB440C88ABDC9E /* CellNoise.cpp */; };
 		FB6E861040734BB2AFF5F3A8 /* ControlWithLabel.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 94963EC4A6BC44B3A5DAA536 /* ControlWithLabel.cpp */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		88A889781EDC3510007F4B0C /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				88A889771EDC3510007F4B0C /* Syphon.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		006D720219952D00008149E2 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
@@ -173,6 +200,29 @@
 		7B48A58A7A51483C93535F19 /* BSplineEditor.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.cpp; name = BSplineEditor.cpp; path = ../blocks/UIslave/src/BSplineEditor.cpp; sourceTree = "<group>"; };
 		82E3B3A07EB24135BDB6BFCD /* Slider.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Slider.h; path = ../blocks/UIslave/src/Slider.h; sourceTree = "<group>"; };
 		858C69A657054A6F81797937 /* CocoaWindowCanvas.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = CocoaWindowCanvas.h; path = ../blocks/UIslave/src/CocoaWindowCanvas.h; sourceTree = "<group>"; };
+		888AD3B31ECC828C00179240 /* SuperModule.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = SuperModule.cpp; path = ../blocks/Orage/src/Modules/SuperModule.cpp; sourceTree = "<group>"; };
+		888AD3B41ECC828C00179240 /* SuperModule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SuperModule.h; path = ../blocks/Orage/src/Modules/SuperModule.h; sourceTree = "<group>"; };
+		88A889631EDC308D007F4B0C /* Syphon.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Syphon.framework; sourceTree = "<group>"; };
+		88A889641EDC308D007F4B0C /* SyphonNameboundClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SyphonNameboundClient.h; sourceTree = "<group>"; };
+		88A889651EDC308D007F4B0C /* SyphonNameboundClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SyphonNameboundClient.m; sourceTree = "<group>"; };
+		88A889671EDC308D007F4B0C /* cinderSyphon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = cinderSyphon.h; sourceTree = "<group>"; };
+		88A889681EDC308D007F4B0C /* syphonClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = syphonClient.h; sourceTree = "<group>"; };
+		88A889691EDC308D007F4B0C /* syphonClient.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = syphonClient.mm; sourceTree = "<group>"; };
+		88A8896A1EDC308D007F4B0C /* syphonServer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = syphonServer.h; sourceTree = "<group>"; };
+		88A8896B1EDC308D007F4B0C /* syphonServer.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = syphonServer.mm; sourceTree = "<group>"; };
+		88A8896C1EDC308D007F4B0C /* syphonServerDirectory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = syphonServerDirectory.h; sourceTree = "<group>"; };
+		88A8896D1EDC308D007F4B0C /* syphonServerDirectory.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = syphonServerDirectory.mm; sourceTree = "<group>"; };
+		88A889731EDC30F6007F4B0C /* SyphonInput.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = SyphonInput.cpp; path = ../blocks/Orage/src/Modules/Videos/SyphonInput.cpp; sourceTree = "<group>"; };
+		88A889741EDC30F6007F4B0C /* SyphonInput.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SyphonInput.h; path = ../blocks/Orage/src/Modules/Videos/SyphonInput.h; sourceTree = "<group>"; };
+		88A889791EDC47D7007F4B0C /* Freezer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Freezer.cpp; path = ../blocks/Orage/src/Modules/Videos/Freezer.cpp; sourceTree = "<group>"; };
+		88A8897A1EDC47D7007F4B0C /* Freezer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Freezer.h; path = ../blocks/Orage/src/Modules/Videos/Freezer.h; sourceTree = "<group>"; };
+		88A8897C1EDC494D007F4B0C /* assets */ = {isa = PBXFileReference; lastKnownFileType = folder; name = assets; path = ../assets; sourceTree = "<group>"; };
+		88A8897E1EDCB652007F4B0C /* DynamicAnalyser.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = DynamicAnalyser.cpp; path = ../blocks/Orage/src/Modules/Controllers/Piano/DynamicAnalyser.cpp; sourceTree = "<group>"; };
+		88A8897F1EDCB652007F4B0C /* DynamicAnalyser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DynamicAnalyser.h; path = ../blocks/Orage/src/Modules/Controllers/Piano/DynamicAnalyser.h; sourceTree = "<group>"; };
+		88A889811EDD765B007F4B0C /* LastNoteExtractor.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = LastNoteExtractor.cpp; path = ../blocks/Orage/src/Modules/Controllers/Piano/LastNoteExtractor.cpp; sourceTree = "<group>"; };
+		88A889821EDD765B007F4B0C /* LastNoteExtractor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LastNoteExtractor.h; path = ../blocks/Orage/src/Modules/Controllers/Piano/LastNoteExtractor.h; sourceTree = "<group>"; };
+		88D0A0881ECF2F1600BE6418 /* Output.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Output.cpp; path = ../blocks/Orage/src/Modules/Videos/Output.cpp; sourceTree = "<group>"; };
+		88D0A0891ECF2F1600BE6418 /* Output.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Output.h; path = ../blocks/Orage/src/Modules/Videos/Output.h; sourceTree = "<group>"; };
 		88D8B45074CB4476BC6C4309 /* XYPad.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = XYPad.h; path = ../blocks/UIslave/src/XYPad.h; sourceTree = "<group>"; };
 		88E6A6BF0D974B789A24DA4C /* PianoInput.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.cpp; name = PianoInput.cpp; path = ../blocks/Orage/src/Modules/Controllers/Piano/PianoInput.cpp; sourceTree = "<group>"; };
 		89E98564226D4D9E8692EA6E /* ModuleVideo.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.cpp; name = ModuleVideo.cpp; path = ../blocks/Orage/src/Modules/Bases/ModuleVideo.cpp; sourceTree = "<group>"; };
@@ -251,6 +301,7 @@
 				00B784B60FF439BC000DE1D7 /* CoreAudio.framework in Frameworks */,
 				00B9955A1B128DF400A5C623 /* IOKit.framework in Frameworks */,
 				00B9955B1B128DF400A5C623 /* IOSurface.framework in Frameworks */,
+				88A889761EDC3510007F4B0C /* Syphon.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -260,6 +311,7 @@
 		01B97315FEAEA392516A2CEA /* Blocks */ = {
 			isa = PBXGroup;
 			children = (
+				88A889611EDC308D007F4B0C /* Syphon */,
 				378C77393A164F4C9C491399 /* Orage */,
 				1FC68A66DF344901A505DDAE /* UIslave */,
 			);
@@ -320,6 +372,7 @@
 		29B97314FDCFA39411CA2CEA /* PianoProjete */ = {
 			isa = PBXGroup;
 			children = (
+				88A8897C1EDC494D007F4B0C /* assets */,
 				01B97315FEAEA392516A2CEA /* Blocks */,
 				29B97315FDCFA39411CA2CEA /* Headers */,
 				080E96DDFE201D6D7F000001 /* Source */,
@@ -371,6 +424,8 @@
 				E5A88721866B40FE9B26FB7E /* Bases */,
 				9ADF9E6C4AB24B10BEE8F830 /* Controllers */,
 				6602E87D465242C5985734F5 /* Videos */,
+				888AD3B31ECC828C00179240 /* SuperModule.cpp */,
+				888AD3B41ECC828C00179240 /* SuperModule.h */,
 			);
 			name = Modules;
 			sourceTree = "<group>";
@@ -383,13 +438,17 @@
 				F44342F9493D4915B3CACC08 /* NoteDisplay.h */,
 				B8B7F25CA8C8466BAD45219E /* PianoInput.h */,
 				C63E6D802C0F40A1BA253D81 /* PositionExtractor.h */,
+				88A8897F1EDCB652007F4B0C /* DynamicAnalyser.h */,
 				6C28CDBF843843CFB53756AA /* Structs.h */,
 				2619B44692A74C84AE98E8A3 /* Config.cpp */,
 				BF718073C7B14E5CAF72E731 /* HandSplitter.cpp */,
 				F0C6231334BE47A9BB1245A0 /* NoteDisplay.cpp */,
 				88E6A6BF0D974B789A24DA4C /* PianoInput.cpp */,
 				3A6FD62498A94F1FBE6C8249 /* PositionExtractor.cpp */,
+				88A8897E1EDCB652007F4B0C /* DynamicAnalyser.cpp */,
 				3F5147ED3CB543E48B4256CB /* Structs.cpp */,
+				88A889811EDD765B007F4B0C /* LastNoteExtractor.cpp */,
+				88A889821EDD765B007F4B0C /* LastNoteExtractor.h */,
 			);
 			name = Piano;
 			sourceTree = "<group>";
@@ -409,6 +468,9 @@
 				54722262D68D41F585BA1003 /* Spliter.h */,
 				71EE1224FD2E4ABD9216C4B1 /* Tile.h */,
 				10B13A9D75D94EE68C40F204 /* Trail.h */,
+				88D0A0891ECF2F1600BE6418 /* Output.h */,
+				88A889741EDC30F6007F4B0C /* SyphonInput.h */,
+				88A8897A1EDC47D7007F4B0C /* Freezer.h */,
 				552A415828FB440C88ABDC9E /* CellNoise.cpp */,
 				F8A43B337A574576B55CA68D /* Cloud.cpp */,
 				00B627F32E2149C38E38DEA4 /* ColorAdjustement.cpp */,
@@ -421,8 +483,45 @@
 				C6E304D117B44AA1828E45DC /* Spliter.cpp */,
 				A90B20E57F05445D9F753FB2 /* Tile.cpp */,
 				22F94E67893245659806CD0D /* Trail.cpp */,
+				88D0A0881ECF2F1600BE6418 /* Output.cpp */,
+				88A889731EDC30F6007F4B0C /* SyphonInput.cpp */,
+				88A889791EDC47D7007F4B0C /* Freezer.cpp */,
 			);
 			name = Videos;
+			sourceTree = "<group>";
+		};
+		88A889611EDC308D007F4B0C /* Syphon */ = {
+			isa = PBXGroup;
+			children = (
+				88A889621EDC308D007F4B0C /* lib */,
+				88A889661EDC308D007F4B0C /* src */,
+			);
+			name = Syphon;
+			path = ../blocks/Syphon;
+			sourceTree = "<group>";
+		};
+		88A889621EDC308D007F4B0C /* lib */ = {
+			isa = PBXGroup;
+			children = (
+				88A889631EDC308D007F4B0C /* Syphon.framework */,
+				88A889641EDC308D007F4B0C /* SyphonNameboundClient.h */,
+				88A889651EDC308D007F4B0C /* SyphonNameboundClient.m */,
+			);
+			path = lib;
+			sourceTree = "<group>";
+		};
+		88A889661EDC308D007F4B0C /* src */ = {
+			isa = PBXGroup;
+			children = (
+				88A889671EDC308D007F4B0C /* cinderSyphon.h */,
+				88A889681EDC308D007F4B0C /* syphonClient.h */,
+				88A889691EDC308D007F4B0C /* syphonClient.mm */,
+				88A8896A1EDC308D007F4B0C /* syphonServer.h */,
+				88A8896B1EDC308D007F4B0C /* syphonServer.mm */,
+				88A8896C1EDC308D007F4B0C /* syphonServerDirectory.h */,
+				88A8896D1EDC308D007F4B0C /* syphonServerDirectory.mm */,
+			);
+			path = src;
 			sourceTree = "<group>";
 		};
 		98C1CADA7B3843F086E71B8F /* src */ = {
@@ -430,10 +529,10 @@
 			children = (
 				C63F6888EAF54839A1027297 /* Orage.h */,
 				7AA0F9FA3333446797AA68A9 /* Tools.h */,
-				A9BD20EE4F334FF38E31DA8C /* Wires */,
-				3D78B2923B9C4EBF9F664373 /* Modules */,
 				2AB0C580AB0C43FCBA3D46EB /* Orage.cpp */,
 				C666D6F50D8F48888D43F10B /* Tools.cpp */,
+				A9BD20EE4F334FF38E31DA8C /* Wires */,
+				3D78B2923B9C4EBF9F664373 /* Modules */,
 			);
 			name = src;
 			sourceTree = "<group>";
@@ -568,6 +667,7 @@
 				8D1107290486CEB800E47090 /* Resources */,
 				8D11072C0486CEB800E47090 /* Sources */,
 				8D11072E0486CEB800E47090 /* Frameworks */,
+				88A889781EDC3510007F4B0C /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -611,6 +711,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				22BC718BEB5A4BEE849CDB67 /* CinderApp.icns in Resources */,
+				88A8897D1EDC494E007F4B0C /* assets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -622,10 +723,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				65D6CF03F176483EA184F69B /* PianoProjeteApp.cpp in Sources */,
+				88A889831EDD765B007F4B0C /* LastNoteExtractor.cpp in Sources */,
 				DA7E8EBFC13F4C1680A9CAE1 /* Orage.cpp in Sources */,
 				1E77E469551D4346B894DFCF /* Tools.cpp in Sources */,
 				1272969B232A4785BAB176CF /* Wire.cpp in Sources */,
 				2A7A7448C24243B6BB855E34 /* WireCV.cpp in Sources */,
+				88A889751EDC30F6007F4B0C /* SyphonInput.cpp in Sources */,
 				C35504AA9B104780A92680A3 /* WirePiano.cpp in Sources */,
 				85D4B4812CA545008D1F624C /* Wires.cpp in Sources */,
 				47789BE4683C48FEA124D2BE /* WireVideo.cpp in Sources */,
@@ -641,6 +744,7 @@
 				54155A5B2C1F4C7799501CFF /* PositionExtractor.cpp in Sources */,
 				DF4E0C4803514555AF72252B /* Structs.cpp in Sources */,
 				F1A0A18345A144D9AAAFCDBF /* CellNoise.cpp in Sources */,
+				88D0A08A1ECF2F1600BE6418 /* Output.cpp in Sources */,
 				1C52043D1A264452A862029F /* Cloud.cpp in Sources */,
 				097E12C374B2436080FF1BF7 /* ColorAdjustement.cpp in Sources */,
 				11670E3107884E10A3FF2C09 /* Crossfader.cpp in Sources */,
@@ -648,6 +752,7 @@
 				76ABDDB5821B49D892D65FE6 /* KeyMixer.cpp in Sources */,
 				27BB6DB74AB6426E954584E4 /* Matte.cpp in Sources */,
 				34523FE39AA34443871C0728 /* Mosher.cpp in Sources */,
+				88A889701EDC308D007F4B0C /* syphonClient.mm in Sources */,
 				AC8D5313C89F4A1F831CE152 /* Oscillator.cpp in Sources */,
 				13B87B07196A47B8A2AFDF76 /* Spliter.cpp in Sources */,
 				E0DF72E0445C443C937226B6 /* Tile.cpp in Sources */,
@@ -660,9 +765,12 @@
 				B67EBE3BE0F34B378C2F93B4 /* Control.cpp in Sources */,
 				FB6E861040734BB2AFF5F3A8 /* ControlWithLabel.cpp in Sources */,
 				8033B0DAC6694F96BFD18A35 /* Dialer.cpp in Sources */,
+				88A889721EDC308D007F4B0C /* syphonServerDirectory.mm in Sources */,
 				EFFE2EDBA66C4F33B8C1F899 /* Envelope.cpp in Sources */,
+				88A8897B1EDC47D7007F4B0C /* Freezer.cpp in Sources */,
 				CCB791BF727648BEAF944C2C /* Fps.cpp in Sources */,
 				3D5FD6442C1442BEBBD13C06 /* Globals.cpp in Sources */,
+				88A8896F1EDC308D007F4B0C /* SyphonNameboundClient.m in Sources */,
 				B3C1979E48F14B3BBA4B766C /* Graph.cpp in Sources */,
 				88AC2DA40BC4441CA9DF5B0B /* Label.cpp in Sources */,
 				C57816A525934F949D35065F /* MultiSlider.cpp in Sources */,
@@ -671,13 +779,16 @@
 				4F033FAA39434E0580FC90FD /* Radio.cpp in Sources */,
 				C48D6AA6B1A546FA96BE6187 /* Range.cpp in Sources */,
 				67EA672D4B4946B1921A7825 /* Responder.cpp in Sources */,
+				88A889801EDCB652007F4B0C /* DynamicAnalyser.cpp in Sources */,
 				BDDC05F87FB74584AC294398 /* Slider.cpp in Sources */,
 				D89202520FBC4A20988D7E0F /* Spacer.cpp in Sources */,
 				EE5AFF62F8204B76AD8893E3 /* Spectrum.cpp in Sources */,
+				888AD3B51ECC828C00179240 /* SuperModule.cpp in Sources */,
 				58B3C05F56494F6A8890AF64 /* SuperCanvas.cpp in Sources */,
 				5A01B83A828443BF9AA18E7E /* TextInput.cpp in Sources */,
 				B5129B57B3EB4BBEB67A8B4F /* TextureView.cpp in Sources */,
 				EC96CDB13A674A99BDDA73D0 /* Toggle.cpp in Sources */,
+				88A889711EDC308D007F4B0C /* syphonServer.mm in Sources */,
 				3814E508078C40A8BD3DBE5D /* View.cpp in Sources */,
 				30382403A518433F8FBE96EC /* Waveform.cpp in Sources */,
 				9AC02B2DEE2745F0AED3D7A9 /* WindowCanvas.cpp in Sources */,
@@ -695,6 +806,7 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
 				DEAD_CODE_STRIPPING = YES;
+				FRAMEWORK_SEARCH_PATHS = ../blocks/Syphon/lib;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_INLINES_ARE_PRIVATE_EXTERN = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -707,6 +819,7 @@
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
 				INFOPLIST_FILE = Info.plist;
 				INSTALL_PATH = "$(HOME)/Applications";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				OTHER_LDFLAGS = "\"$(CINDER_PATH)/lib/macosx/$(CONFIGURATION)/libcinder.a\"";
 				PRODUCT_BUNDLE_IDENTIFIER = "org.libcinder.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = PianoProjete;
@@ -722,6 +835,7 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				FRAMEWORK_SEARCH_PATHS = ../blocks/Syphon/lib;
 				GCC_FAST_MATH = YES;
 				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
 				GCC_INLINES_ARE_PRIVATE_EXTERN = YES;
@@ -735,6 +849,7 @@
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
 				INFOPLIST_FILE = Info.plist;
 				INSTALL_PATH = "$(HOME)/Applications";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				OTHER_LDFLAGS = "\"$(CINDER_PATH)/lib/macosx/$(CONFIGURATION)/libcinder.a\"";
 				PRODUCT_BUNDLE_IDENTIFIER = "org.libcinder.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = PianoProjete;

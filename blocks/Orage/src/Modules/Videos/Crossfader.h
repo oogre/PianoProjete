@@ -29,6 +29,7 @@ namespace ogre {
         Crossfader(string name, vec2 origin, vec2 size, gl::Context * mMainWinCtx);
         
     public:
+        static int COUNT;
         
         ~Crossfader(){
             inputA.reset();
@@ -45,7 +46,6 @@ namespace ogre {
             mMainWinCtx = nullptr;
         }
         
-        static int COUNT;
         
         typedef std::shared_ptr<class Crossfader> CrossfaderRef;
         

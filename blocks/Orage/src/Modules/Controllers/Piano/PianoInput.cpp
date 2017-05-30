@@ -43,7 +43,7 @@ namespace ogre {
         }
         catch( SerialExc &exc ) {
             CI_LOG_EXCEPTION( "coult not initialize the serial device", exc );
-            //exit( -1 );
+            exit( -1 );
         }
         
     }
@@ -62,8 +62,7 @@ namespace ogre {
         }
         ModulePiano::update();
         
-        unsigned int in = 0, pitch = 0, velocity = 0;
-        
+        /*
 
         if(!mSerial){
             in = rand() % 2 == 1 ? NOTE_ON : NOTE_OFF;
@@ -79,41 +78,34 @@ namespace ogre {
             
             velocity = 10;
         }
-        else while(mSerial && mSerial->getNumBytesAvailable()>3) {
-            in = mSerial->readByte();
-            if ((in ^ NOTE_ON) <= CHANNEL_LEN || (in ^ NOTE_OFF) <= CHANNEL_LEN){
+        else */
+        while(mSerial->getNumBytesAvailable()>=3) {
+            int pitch = 0, velocity = 0;
+            uint8_t in = mSerial->readByte() ^ NOTE_OFF;
+
+            if (in < CHANNEL_LEN || in - CHANNEL_LEN < CHANNEL_LEN){
                 pitch = mSerial->readByte();
                 velocity = mSerial->readByte();
+                if (in < CHANNEL_LEN){
+                    if(Note * currentNote = Data::getNote(pitch)){
+                        //cout<<"NOTE_OFF : "<<currentNote->getName()<<endl;
+                        currentNote->disactive();
+                        playingNotes->removeNote(currentNote);
+                        Data::noteOffCounter++;
+                    }
+                }else if (in - CHANNEL_LEN < CHANNEL_LEN){
+                    if(Note * currentNote = Data::getNote(pitch)){
+                        //cout<<"NOTE_ON : "<<currentNote->getName()<<endl;
+                        currentNote->active();
+                        playingNotes->addNote(currentNote);
+                        Data::noteTotal++;
+                        Data::noteOnCounter++;
+                    }
+                }
             }
         }
-        
-        
-        if ((in ^ NOTE_ON) <= CHANNEL_LEN){
-            if(Note * currentNote = Data::getNote(pitch)){
-                if(currentNote->isPlayed)return;
-                currentNote->playedAt = cinder::app::getElapsedSeconds();
-                currentNote->playedCountMem = ++currentNote->playedCount;
-                currentNote->isPlayed = true;
-                playingNotes->addNote(currentNote);
-                Data::noteTotal++;
-                Data::noteOnCounter++;
-                //cout<<"ADD "<<currentNote->ID.to_string()<<endl;
-                //ofNotifyEvent(noteOnEvent, * currentNote, this);
-            }
-        }else if ((in ^ NOTE_OFF) <= CHANNEL_LEN){
-            if(Note * currentNote = Data::getNote(pitch)){
-                if(!currentNote->isPlayed)return;
-                currentNote->isPlayed = false;
-                currentNote->playedAt = cinder::app::getElapsedSeconds();
-                if(currentNote->playedAt != 0){
-                    currentNote->playedTimeMem = currentNote->playedTime += (cinder::app::getElapsedSeconds() - currentNote->playedAt);
-                }
-                currentNote->playedAt = 0;
-                playingNotes->removeNote(currentNote);
-                Data::noteOffCounter++;
-                //ofNotifyEvent(noteOnEvent, * currentNote, this);
-                //cout<<"REMOVE  "<<currentNote->ID.to_string()<<endl;
-            }
+        for(int i = 0 ; i < Config::NOTE_LEN ; i ++){
+            Data::notes.at(i).update();
         }
     }
     
@@ -121,10 +113,19 @@ namespace ogre {
         mUi->setColorBack(ColorAT<float>(vec4(.1f, .2f, .3f, .4f)));
         //mUi->setColorFill(ColorAT<float>(vec4(.8f, .9f, 1.f, .6f)));
         mUi->setColorFillHighlight(ColorAT<float>(vec4(.1f, .9f, 1.f, 1.f)));
+        mUi->addSpacer(false);
+        mUi->addSpacer(false);
+        
+        
+        tools.addSlider2(mUi, "NOTE FORGET RATE", &Config::NOTE_FORGET_RATE, 0.8f, 1.0f);
+        mUi->addSpacer(false);
+        mUi->addSpacer(false);
+        
+        
         
         ModulePiano::setupUI();
         setupInput();
         setupOutput();
-        mUi->setMinified(true);
+        mUi->setMinified(false);
     }
 };

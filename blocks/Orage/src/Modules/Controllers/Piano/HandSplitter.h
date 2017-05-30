@@ -26,10 +26,17 @@ namespace ogre {
         
         HandSplitter(string name, vec2 origin, vec2 size, gl::Context * mMainWinCtx);
     public:
+        static int COUNT;
         vector<NotesetRef>hands;
         ~HandSplitter(){
+            auto it = hands.begin();
+            while(it != hands.end()){
+                it->reset();
+                it++;
+            }
+            hands.clear();
+            mMainWinCtx = nullptr;
         }
-        static int COUNT;
         typedef std::shared_ptr<class HandSplitter> HandSplitterRef;
         static HandSplitterRef create( const std::string name, vec2 origin, gl::Context * mMainWinCtx)
         {

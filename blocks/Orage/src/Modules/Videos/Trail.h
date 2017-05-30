@@ -36,14 +36,16 @@ namespace ogre {
         Trail(string name, vec2 origin, vec2 size, gl::Context * mMainWinCtx);
         
     public:
+        static int COUNT;
+        
         ~Trail(){
+            data.~TrailData();
             dataUbo.reset();
             mFbo.reset();
             mFbo2.reset();
             mShader.reset();
             mMainWinCtx = nullptr;
         }
-        static int COUNT;
         
         typedef std::shared_ptr<class Trail> TrailRef;
         

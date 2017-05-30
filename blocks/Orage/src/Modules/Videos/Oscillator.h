@@ -18,6 +18,8 @@ using namespace std;
 
 namespace ogre {
     class Oscillator : public ModuleVideo{
+        gl::Context * mMainWinCtx;
+        
         float trail = 1.0;
         
         struct OscillatorData {
@@ -35,18 +37,25 @@ namespace ogre {
             float noise = .0f;
         } data;
         
+        gl::UboRef          dataUbo;
+        gl::FboRef			mFbo, mFbo2;
+        gl::GlslProgRef     mShader;
         
         Oscillator(string name, vec2 origin, vec2 size, gl::Context * mMainWinCtx);
         public:
+        static int COUNT;
             ~Oscillator(){
+                data.~OscillatorData();
                 dataUbo.reset();
                 mFbo.reset();
                 mFbo2.reset();
                 mShader.reset();
                 mMainWinCtx = nullptr;
+                
+
+                
             }
-            static int COUNT;
-            gl::Context * mMainWinCtx;
+
             typedef std::shared_ptr<class Oscillator> OscillatorRef;
         
             static OscillatorRef create( const std::string name, vec2 origin, gl::Context * mMainWinCtx)
@@ -54,11 +63,6 @@ namespace ogre {
                 Oscillator::COUNT++;
                 return OscillatorRef( new Oscillator( name, origin, vec2(WIDTH, 580), mMainWinCtx ) );
             }
-        
-            gl::UboRef          dataUbo;
-            gl::FboRef			mFbo, mFbo2;
-            gl::GlslProgRef     mShader;
-        
             void setupShader() override;
             void setupUI() override;
             void setup() override;

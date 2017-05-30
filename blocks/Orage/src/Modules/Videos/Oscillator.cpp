@@ -119,6 +119,9 @@ void Oscillator::setupUI(){
     mUi->addSpacer(false);
     mUi->addSpacer(false);
     
+    
+    //mUi->addXYPad("offset", vec2(data.phaseDx, data.phaseDy), XYPad::Format().label(false));
+    
     tools.addSlider(mUi, "Dx", &(data.phaseDx), 0.0f, 1.0f);
     tools.addSlider(mUi, "Dy", &(data.phaseDy), -1.0f, 1.0f);
     tools.addSlider(mUi, "Mod", &(data.modifier), 0.0f, 1.0f);

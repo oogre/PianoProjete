@@ -32,7 +32,7 @@ class BitsetTools {
                 count += (*input)[i];
                 sum += ((*input)[i] ? (i+1) : 0);
             };
-            output[sum/count] = true;
+            output[(sum/count)-1] = true;
         }
         return output;
     }
@@ -45,7 +45,7 @@ class BitsetTools {
     float min(const boost::dynamic_bitset<> * input){
         if(!input->any()) return 0.0f;
         for(int i = 0 ; i < input->size() ; i ++){
-            if((*input)[i]) return (float)i;
+            if((*input)[i]) return (float)(input->size() - i);
         };
         return 0.0f;
     }
@@ -53,7 +53,7 @@ class BitsetTools {
     float max(const boost::dynamic_bitset<> * input){
         if(!input->any()) return 0.0f;
         for(int i = input->size()-1 ; i >=0  ; i --){
-            if((*input)[i]) return (float)i;
+            if((*input)[i]) return (float)(input->size() - i);
         };
         return 0.0f;
     }
@@ -176,22 +176,26 @@ typedef std::shared_ptr<struct Noteset> NotesetRef;
 struct Note{
     boost::dynamic_bitset<> ID;
     boost::dynamic_bitset<> IDOneOctave;
+    
     int num;
     float norm;                 // [0, 1[
     int pitch;                  // [21, 108]
     Config::NOTE_NAME note;     // C, C#, D, D#, E, F, F#, G, G#, A, A#, B
     int octave;                 // [0, 8]
     bool isPlayed = false;
-    float playedCount = 0.0f;
+    long playedCount = 0;
     float playedCountMem = 0.0f;
+    
     float playedAt = 0.0f;
     float playedTime = 0.0f;
     float playedTimeMem = 0.0f;
+    
+    //float playedTimeMem = 0.0f;
     Note(int num, boost::dynamic_bitset<> * ID){
         this->ID = * ID;
         this->IDOneOctave = bitsetTools.toOctave(ID);
         this->num = num;
-        this->norm = (float)num/(float)Config::NOTE_LEN;
+        this->norm = (num+1.0f)/(float)Config::NOTE_LEN;
         this->pitch = num + 21;
         this->note = static_cast<Config::NOTE_NAME>(Config::NOTE_NAME::A + num % Config::OCTAVE_LEN);
         this->octave = (num+9)/Config::OCTAVE_LEN;
@@ -199,11 +203,34 @@ struct Note{
     string getName();
     string getNoteName();
     string toString();
-    void active();
-    void disactive();
+    void active(){
+        if(isPlayed)return;
+        isPlayed = true;
+        playedAt = cinder::app::getElapsedSeconds();
+        playedCount++;
+        playedCountMem++;
+    };
+    void disactive(){
+        if(!isPlayed)return;
+        isPlayed = false;
+        playedTime += cinder::app::getElapsedSeconds() - playedAt;
+        playedTimeMem += cinder::app::getElapsedSeconds() - playedAt;
+    };
+    void update(){
+        playedTimeMem *= Config::NOTE_FORGET_RATE;
+        playedCountMem *= Config::NOTE_FORGET_RATE;
+    };
+    float time(bool memory = false){
+        if(isPlayed){
+            return cinder::app::getElapsedSeconds() - playedAt + (memory ? playedTimeMem : playedTime);
+        }
+        else{
+            return memory ? playedTimeMem : playedTime;
+        }
+    }
 };
 
-
+/*
 struct Chord{
     Noteset noteset;
     float diffWithLastChord;
@@ -211,7 +238,8 @@ struct Chord{
     float playedCount;
     float playedCountMem;
     float playedAt;
-};
+};*/
+    
 }
 
 #endif /* Structs_hpp */

@@ -24,17 +24,21 @@ class Config{
     
     public :
         const static unsigned int MIN_PITCH = 21;
-        const static unsigned int MAX_PITCH = 108;
-        const static unsigned int NOTE_LEN = 88;
+        const static unsigned int MAX_PITCH = 106;
+        const static unsigned int NOTE_LEN = 85;
         const static unsigned int OCTAVE_LEN = 12;
     
-        const static unsigned int MAX_DIST_PER_HAND = 13;
-        const static unsigned int MAX_NOTE_PER_HAND = 5;
+        const static unsigned int MAX_DIST_PER_HAND = 10;
+        const static unsigned int MAX_NOTE_PER_HAND = 6;
         const static unsigned int MAX_HAND = 5;
+    
+        const static unsigned int MAX_SINGLE_NOTE_SPEED = 20;
     
         static float FAST_NOTE_RATE;
         static float MED_NOTE_RATE;
         static float SLOW_NOTE_RATE;
+    
+
     
         const static unsigned int MIN_NOTE_PER_CHORD = 3;
         const static unsigned int MAX_CHORD_MEMORY = 10;

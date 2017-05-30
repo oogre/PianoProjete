@@ -37,13 +37,15 @@ namespace ogre {
         
         CellNoise(string name, vec2 origin, vec2 size, gl::Context * mMainWinCtx);
     public:
+        static int COUNT;
         
         ~CellNoise(){
+            data.~CellNoiseData();
+            dataUbo.reset();
             mFbo.reset();
             mShader.reset();
             mMainWinCtx = nullptr;
         }
-        static int COUNT;
         
         typedef std::shared_ptr<class CellNoise> CellNoiseRef;
         

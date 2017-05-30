@@ -35,14 +35,15 @@ namespace ogre {
         Mosher(string name, vec2 origin, vec2 size, gl::Context * mMainWinCtx);
         
     public:
+        static int COUNT;
         ~Mosher(){
+            data.~MosherData();
             dataUbo.reset();
             mFbo.reset();
             mFbo2.reset();
             mShader.reset();
             mMainWinCtx = nullptr;
         }
-        static int COUNT;
         
         typedef std::shared_ptr<class Mosher> MosherRef;
         

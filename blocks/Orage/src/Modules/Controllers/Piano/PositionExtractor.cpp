@@ -37,29 +37,39 @@ namespace ogre {
         }
         ModulePiano::update();
         
-        if(!inputs['A']) return;
+        if(!inputs['A']){
+            return;
+        };
         
-        //bitset<88> _max = bitsetTools.maximum(&(inputs['A']->ID));
-        //bitset<88> _min = bitsetTools.minimum(&(inputs['A']->ID));
-        boost::dynamic_bitset<> a = bitsetTools.average(&(inputs['A']->ID));
-        //cout<<<<endl;
-        
-        averageRate = bitsetTools.normalize(&a);
-        minRate = bitsetTools.min(&(inputs['A']->ID));
-        maxRate = bitsetTools.max(&(inputs['A']->ID));
-        middleRate = (minRate + maxRate) * 0.5;
-        //diffRate = (averageRate - middleRate) * 4;
-        
-        countRate = (float)inputs['A']->length/(float)Config::NOTE_LEN;
-        countOctaveRate = (float)inputs['A']->lengthOneOctave/(float)Config::OCTAVE_LEN;
-        
-        average += (averageRate - average)*0.1f;
-        min += (minRate - min)*0.1f;
-        max += (maxRate - max)*0.1f;
-        middle += (middleRate - middle)*0.1f;
-        //diff += (diffRate - diff)*0.1f;
-        count += (countRate - count)*0.1f;
-        countOctave += (countOctaveRate - countOctave)*0.1f;
+        if(oldInputID != inputs['A']->ID){
+            oldInputID = inputs['A']->ID;
+            countRate = inputs['A']->length;
+            countOctaveRate = inputs['A']->lengthOneOctave;
+            if(countRate!=0){
+                auto it = inputs['A']->notes.begin();
+                auto end = inputs['A']->notes.end();
+                int c = 0;
+                for(; it != end ; it++){
+                    c+= (*it)->num;
+                    minRate = minRate > (*it)->num ? (*it)->num : minRate;
+                    maxRate = maxRate < (*it)->num ? (*it)->num : maxRate;
+                }
+                averageRate = (float)c/countRate;
+                middleRate = ( minRate + maxRate ) * .5f;
+                medianeRate = minRate + inputs['A']->notes.size() * .5f;
+            }else{
+                maxRate = 0.f ;
+                minRate = Config::NOTE_LEN;
+                medianeRate = middleRate = averageRate = Config::NOTE_LEN * 0.5f;
+            }
+        }
+        average += (averageRate - average)*inertie;
+        min += (minRate - min)*inertie;
+        max += (maxRate - max)*inertie;
+        middle += (middleRate - middle)*inertie;
+        mediane += (medianeRate - mediane)*inertie;
+        count += (countRate - count)*inertie;
+        countOctave += (countOctaveRate - countOctave)*inertie;
     }
     
     void PositionExtractor::setupUI(){
@@ -71,13 +81,17 @@ namespace ogre {
         setupInput();
         setupOutput();
         
-        tools.addSlider(mUi, "count", &count, 0, 1);
-        tools.addSlider(mUi, "countOctave", &countOctave, 0, 1);
+        tools.addSlider(mUi, "INERTIE", &inertie, 0, 1);
+        mUi->addSpacer(false);
+        mUi->addSpacer(false);
+        
+        tools.addSlider(mUi, "count", &count, 0, Config::NOTE_LEN);
+        tools.addSlider(mUi, "countOctave", &countOctave, 0, Config::OCTAVE_LEN);
         tools.addSlider(mUi, "min", &min, 0, Config::NOTE_LEN);
         tools.addSlider(mUi, "average", &average, 0, Config::NOTE_LEN);
         tools.addSlider(mUi, "middle", &middle, 0, Config::NOTE_LEN);
+        tools.addSlider(mUi, "mediane", &mediane, 0, Config::NOTE_LEN);
         tools.addSlider(mUi, "max", &max, 0, Config::NOTE_LEN);
-        tools.addSlider(mUi, "diff", &diff, -1, 1);
         
         mUi->setMinified(true);
     }

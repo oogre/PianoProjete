@@ -39,6 +39,7 @@ namespace ogre {
     public:
         
         ~Lfos(){
+            lfoDatas.~LfoData();
             mMainWinCtx = nullptr;
         }
         static int COUNT;

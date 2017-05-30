@@ -24,12 +24,16 @@ namespace ogre {
         int size;
         NoteDisplay(string name, vec2 origin, vec2 size, gl::Context * mMainWinCtx, const int & S);
     public:
+        static int COUNT;
         vector<float>notes;
         vector<float>notesRate;
         NotesetRef output;
         ~NoteDisplay(){
+            notes.clear();
+            notesRate.clear();
+            output.reset();
+            mMainWinCtx = nullptr;
         }
-        static int COUNT;
         typedef std::shared_ptr<class NoteDisplay> NoteDisplayRef;
         template <size_t S>
         static NoteDisplayRef create( const std::string name, vec2 origin, gl::Context * mMainWinCtx)

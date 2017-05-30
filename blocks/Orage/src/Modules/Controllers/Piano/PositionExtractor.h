@@ -19,21 +19,30 @@ using namespace std;
 
 namespace ogre {
     class PositionExtractor : public ModulePiano{
+        boost::dynamic_bitset<> oldInputID;
         gl::Context * mMainWinCtx;
         float average = 0.f, averageRate = 0.f;
         float middle = 0.f, middleRate = 0.f;
+        float mediane = 0.f, medianeRate = 0.f;
         float diff = 0.f, diffRate = 0.f;
         float min = 0.f, minRate = 0.f;
         float max = 0.f, maxRate = 0.f;
         float count = 0.f, countRate = 0.f;
         float countOctave = 0.f, countOctaveRate = 0.0f;
-
+        float inertie = 1.0f;
         PositionExtractor(string name, vec2 origin, vec2 size, gl::Context * mMainWinCtx);
     public:
+        static int COUNT;
         vector<NotesetRef>hands;
         ~PositionExtractor(){
+            mMainWinCtx = nullptr;
+            auto it = hands.begin();
+            while(it != hands.end()){
+                it->reset();
+                it++;
+            }
+            hands.clear();
         }
-        static int COUNT;
         typedef std::shared_ptr<class PositionExtractor> PositionExtractorRef;
         static PositionExtractorRef create( const std::string name, vec2 origin, gl::Context * mMainWinCtx)
         {

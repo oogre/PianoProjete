@@ -12,9 +12,9 @@ namespace ogre {
     float Config::FAST_NOTE_RATE=0.025f;// 1 / 40
     float Config::MED_NOTE_RATE =0.03f;// 1 / 30
     float Config::SLOW_NOTE_RATE=0.1f;// 1 / 10
-
+    
     float Config::CHORD_FORGET_RATE = 0.1f;
-    float Config::NOTE_FORGET_RATE = 0.09f;
+    float Config::NOTE_FORGET_RATE = 0.99f;
 
     char* Config::NOTE_NAME_TO_STRING[] = {
         (char*)"A",
