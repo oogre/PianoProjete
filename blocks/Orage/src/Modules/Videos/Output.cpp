@@ -23,7 +23,7 @@ namespace ogre {
     
     Output::Output( std::string name, vec2 origin, vec2 size, gl::Context * mMainWinCtx ) : ModuleVideo(name+" "+ tools.to_roman(Output::COUNT), origin, size, 1, 1, true){
         this->mMainWinCtx = mMainWinCtx;
-    }
+        format = qtime::MovieWriter::Format().codec( qtime::MovieWriter::H264 ).fileType( qtime::MovieWriter::MPEG4 );    }
     
     void Output::setup(){
         ModuleVideo::setup();
@@ -61,6 +61,12 @@ namespace ogre {
         mFbo->unbindFramebuffer();
         
         gl::popMatrices();
+        
+        if(inputs['A']){
+            if(mMovieExporter){
+                mMovieExporter->addFrame(Surface8u(inputs['A']->createSource()));
+            }
+        }
     }
     
     void Output::setupUI(){
@@ -75,6 +81,20 @@ namespace ogre {
                                                                  createOutputWindow();
                                                              }
                                                          });
+        
+        ToggleRef b = mUi->addToggle("Save", false);
+        b->setCallback(
+                       [this](bool a) {
+                           if(a){
+                               fs::path path = getSaveFilePath();
+                               if( ! path.empty() ) {
+                                   mMovieExporter = qtime::MovieWriter::create( path, inputs['A']->getWidth(), inputs['A']->getHeight(), format );
+                               }
+                           }else{
+                               mMovieExporter->finish();
+                               mMovieExporter.reset();
+                           }
+                       });
         mUi->setMinified(false);
     }
     

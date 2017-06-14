@@ -54,8 +54,6 @@ namespace ogre {
             mUi->addSubViewSouthOf(r, name);
             return s;
         }
-
-        
         
         
         SliderfRef addSlider2(CanvasRef mUi, string name, float * data, float min, float max, int width = 0 ){

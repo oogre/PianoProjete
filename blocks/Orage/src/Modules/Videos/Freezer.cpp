@@ -74,21 +74,28 @@ namespace ogre {
             dataUbo->bufferSubData( 0, sizeof( data ), &data );
             gl::ScopedGlslProg glslProg( mShader );
             
-            if(inputs['A'] && inputs['B']){
+            if(inputs['A']){
                 inputs['A']->bind(0);
                 mShader->uniform( "tex0", 0 );  // texunit 0
-                inputs['B']->bind(1);
-                mShader->uniform( "tex1", 1 );  // texunit
-                outputs['A']->bind(2);
-                mShader->uniform( "tex2", 2 );  // texunit
+                outputs['A']->bind(1);
+                mShader->uniform( "tex2", 1 );  // texunit
+                if(inputs['B']){
+                    data.selectorActive = true;
+                    inputs['B']->bind(2);
+                    mShader->uniform( "tex1", 2 );  // texunit
+                }else{
+                    data.selectorActive = false;
+                }
             }
             
             gl::color(Color::white());
             gl::drawSolidRect(Area( 0, 0, mFbo->getWidth(), mFbo->getHeight() ));
-            if(inputs['A'] && inputs['B']){
+            if(inputs['A']){
                 inputs['A']->unbind(0);
-                inputs['B']->unbind(1);
-                outputs['A']->unbind(2);
+                outputs['A']->unbind(1);
+                if(inputs['B']){
+                    inputs['B']->unbind(2);
+                }
             }
         }
         mFbo->unbindFramebuffer();
@@ -110,24 +117,10 @@ namespace ogre {
         mUi->setColorBack(ColorAT<float>(vec4(.1f, .7f, .3f, .4f)));
         //mUi->setColorFill(ColorAT<float>(vec4(.8f, .9f, 1.f, .6f)));
         mUi->setColorFillHighlight(ColorAT<float>(vec4(.3f, .9f, 1.f, 1.f)));
-        /*
-        mUi->addSpacer(false);
-        mUi->addSpacer(false);
-        
-        tools.addSlider(mUi, "map1", &(data.map1), -1.f, 1.0f);
-        tools.addSlider(mUi, "map2", &(data.map2), -1.f, 1.0f);
         
         mUi->addSpacer(false);
         mUi->addSpacer(false);
-        
-        tools.addSlider(mUi, "gain", &(data.gain), -1.f, 1.0f);
-        
-        mUi->addSpacer(false);
-        mUi->addSpacer(false);
-        
-        tools.addSlider(mUi, "x", &(data.x), -1.f, 1.0f);
-        tools.addSlider(mUi, "y", &(data.y), -1.f, 1.0f);
-        */
+      
         
         tools.addSlider(mUi, "amount", &(data.amount), 0, 1.0f);
         tools.addSlider(mUi, "black", &(data.black), 0, 1.0f);

@@ -23,9 +23,12 @@ namespace ogre {
         gl::Context * mMainWinCtx;
         
         struct ColorAdjustementData {
-            float bri  = 1.0f;
-            float sat  = 1.0f;
-            float con  = 1.0f;
+            float bri  = 0.0f;
+            float sat  = 0.0f;
+            float con  = 0.0f;
+            float red  = 0.0f;
+            float green  = 0.0f;
+            float blue  = 0.0f;
         } data;
         
         

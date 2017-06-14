@@ -21,6 +21,8 @@ namespace ogre {
     public:
         static const int            FBO_WIDTH;
         static const int            FBO_HEIGHT;
+        static const int            HALF_FBO_WIDTH;
+        static const int            HALF_FBO_HEIGHT;
         static const float          RATIO;
         static cinder::gl::TextureRef     UP;
         static cinder::gl::TextureRef     DOWN;

@@ -23,6 +23,7 @@ namespace ogre {
         TextureViewRef inputA;
         TextureViewRef inputB;
         float crossfade = 0 ;
+        float blend = 0;
         gl::FboRef			mFbo, mFbo2;
         gl::GlslProgRef     mShader;
         

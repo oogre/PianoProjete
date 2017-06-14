@@ -90,6 +90,8 @@ namespace ogre {
             }else{
                 mShader->uniform( "alpha1", 0.f );  // texunit
             }
+            
+            mShader->uniform( "blend", blend);
             gl::color(Color::white());
             gl::drawSolidRect(Area( 0, 0, mFbo->getWidth(), mFbo->getHeight() ));
                  
@@ -140,6 +142,7 @@ namespace ogre {
         }
 
         
+        tools.addSlider(mUi, "BLEND", &(blend), 0, 13, 260);
         tools.addSlider(mUi, "Crossfade", &(crossfade), -1.f, 1.f, 260);
         
         

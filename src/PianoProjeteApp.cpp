@@ -33,8 +33,8 @@ class PianoProjeteApp : public App {
 
 void PianoProjeteApp::prepareSettings( Settings *settings )
 {
-    settings->setWindowSize( 800, 600 );
-    settings->setWindowPos(0, 0);
+    settings->setWindowSize( 1920, 1200 );
+    //settings->setWindowPos(0, 0);
    // settings->setFullScreen(true, FullScreenOptions().display(FullScreenOptions().getDisplay()));
 }
 
@@ -47,7 +47,7 @@ void PianoProjeteApp::setup()
 
 void PianoProjeteApp::update()
 {
-    orage->update();
+    
 }
 
 void PianoProjeteApp::draw()
@@ -57,7 +57,7 @@ void PianoProjeteApp::draw()
     }
 
     gl::clear(ColorAT<float>(0, 0, 0, 0));
-    
+    orage->update();
     orage->draw(mMouseDrag, mMouseSelector);
     wires.draw(mMouseLoc);
 }

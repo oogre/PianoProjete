@@ -21,7 +21,7 @@
 #include "Tile.h"
 #include "Spliter.h"
 #include "ColorAdjustement.h"
-#include "Invert.h"
+
 
 #include "Mosher.h"
 #include "Crossfader.h"
@@ -31,9 +31,12 @@
 #include "SyphonInput.h"
 
 #include "Freezer.h"
+#include "Delay.h"
+#include "Resize.h"
+#include "Blur.h"
+
 //#include "KeyMixer.h"
 //#include "CellNoise.h"
-//#include "Trail.h"
 
 #include "Lfos.h"
 #include "FFT.h"

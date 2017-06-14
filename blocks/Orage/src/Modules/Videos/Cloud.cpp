@@ -44,12 +44,12 @@ namespace ogre {
         dataUbo->bindBufferBase( id );
         // and finally tell the shaders that their uniform buffer 'FormulaParams' can be found at buffer base 0
         mShader->uniformBlock("cloud", id );
-        data.seedXX = Rand::randFloat();
-        data.seedYX = Rand::randFloat();
-        data.seedZX = Rand::randFloat();
-        data.seedXY = Rand::randFloat();
-        data.seedYY = Rand::randFloat();
-        data.seedZY = Rand::randFloat();
+        data.seedXX = Rand::randFloat(-1.0f, 1.f);
+        data.seedYX = Rand::randFloat(-1.0f, 1.f);
+        data.seedZX = Rand::randFloat(-1.0f, 1.f);
+        data.seedXY = Rand::randFloat(-1.0f, 1.f);
+        data.seedYY = Rand::randFloat(-1.0f, 1.f);
+        data.seedZY = Rand::randFloat(-1.0f, 1.f);
         
     }
     

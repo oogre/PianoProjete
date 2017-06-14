@@ -73,17 +73,21 @@ namespace ogre {
             dataUbo->bufferSubData( 0, sizeof( data ), &data );
             gl::ScopedGlslProg glslProg( mShader );
             
-            if(inputs['A'] && inputs['B']){
+            if(inputs['A']){
                 inputs['A']->bind(0);
                 mShader->uniform( "tex0", 0 );  // texunit 0
+            }
+            if(inputs['B']){
                 inputs['B']->bind(1);
                 mShader->uniform( "tex1", 1 );  // texunit
             }
             
             gl::color(Color::white());
             gl::drawSolidRect(Area( 0, 0, mFbo->getWidth(), mFbo->getHeight() ));
-            if(inputs['A'] && inputs['B']){
+            if(inputs['A']){
                 inputs['A']->unbind(0);
+            }
+            if(inputs['B']){
                 inputs['B']->unbind(1);
             }
         }
@@ -110,12 +114,6 @@ namespace ogre {
         mUi->addSpacer(false);
         mUi->addSpacer(false);
         
-        tools.addSlider(mUi, "map1", &(data.map1), -1.f, 1.0f);
-        tools.addSlider(mUi, "map2", &(data.map2), -1.f, 1.0f);
-        
-        mUi->addSpacer(false);
-        mUi->addSpacer(false);
-        
         tools.addSlider(mUi, "gain", &(data.gain), -1.f, 1.0f);
         
         mUi->addSpacer(false);
@@ -124,6 +122,8 @@ namespace ogre {
         tools.addSlider(mUi, "x", &(data.x), -1.f, 1.0f);
         tools.addSlider(mUi, "y", &(data.y), -1.f, 1.0f);
         
+        
+        mUi->addToggle("Mirror", &data.mirror);
         
         mUi->setMinified(true);
     }

@@ -25,6 +25,7 @@ namespace ogre {
             float amount  = 1.0f;
             float black  = 0.0f;
             float white  = 1.0f;
+            bool selectorActive = false;
         } data;
         
         gl::UboRef          dataUbo;

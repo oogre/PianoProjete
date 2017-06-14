@@ -59,7 +59,7 @@ namespace ogre {
             gl::clear( ColorA(0, 0, 0, 0));
             gl::color(ColorA(1, 1, 1, 1));
             if(serverDir->isValidIndex(dirIdx))
-                clientRef->draw(0, 0, mFbo->getWidth(), mFbo->getHeight());
+                clientRef->draw(0, mFbo->getHeight(), mFbo->getWidth(), -mFbo->getHeight());
         }
         mFbo->unbindFramebuffer();
         

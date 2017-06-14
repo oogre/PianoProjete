@@ -63,12 +63,7 @@ ColorAdjustementRef Orage::addColorAdjustement(vec2 origin){
     modules.push_back(ref);
     return ref;
 }
-InvertRef Orage::addInvert(vec2 origin){
-    InvertRef ref = Invert::create("Invert", origin, mMainWinCtx);
-    ref->setup();
-    modules.push_back(ref);
-    return ref;
-}
+
 CloudRef Orage::addCloud(vec2 origin){
     CloudRef ref = Cloud::create("Cloud", origin, mMainWinCtx);
     ref->setup();
@@ -91,6 +86,27 @@ SyphonInputRef Orage::addSyphonInput(vec2 origin){
 
 FreezerRef Orage::addFreezer(vec2 origin){
     FreezerRef ref = Freezer::create("Freezer", origin, mMainWinCtx);
+    ref->setup();
+    modules.push_back(ref);
+    return ref;
+}
+
+DelayRef Orage::addDelay(vec2 origin){
+    DelayRef ref = Delay::create("Delay", origin, mMainWinCtx);
+    ref->setup();
+    modules.push_back(ref);
+    return ref;
+}
+
+ResizeRef Orage::addResize(vec2 origin){
+    ResizeRef ref = Resize::create("Resize", origin, mMainWinCtx);
+    ref->setup();
+    modules.push_back(ref);
+    return ref;
+}
+
+BlurRef Orage::addBlur(vec2 origin){
+    BlurRef ref = Blur::create("Blur", origin, mMainWinCtx);
     ref->setup();
     modules.push_back(ref);
     return ref;
@@ -211,6 +227,11 @@ void Orage::setup(){
     
     contextMenu = SuperCanvas::create("context menu");
     contextMenu->setSize(vec2(ModuleCommon::WIDTH, 300));
+    
+    contextMenu->addSpacer(false);
+    contextMenu->addSpacer(false);
+
+    
     contextMenu->addButton("Matte", false)->setCallback(
                                                         [this](bool a) {
                                                             if(a){
@@ -229,6 +250,7 @@ void Orage::setup(){
                                                                 addCloud(contextMenu->getOrigin());
                                                             }
                                                         });
+    contextMenu->addSpacer(false);
     contextMenu->addSpacer(false);
     
     contextMenu->addButton("Mosher", false)->setCallback(
@@ -252,37 +274,7 @@ void Orage::setup(){
                                                                  }
                                                              });
     
-    
-    
-    contextMenu->addButton("Output", false)->setCallback(
-                                                         [this](bool a) {
-                                                             if(a){
-                                                                 addOutput(contextMenu->getOrigin());
-                                                             }
-                                                         });
-    
-    
-    
-    
-    
-    
-    contextMenu->addButton("Syphon", false)->setCallback(
-                                                         [this](bool a) {
-                                                             if(a){
-                                                                 addSyphonInput(contextMenu->getOrigin());
-                                                             }
-                                                         });
-    
-    contextMenu->addButton("Freezer", false)->setCallback(
-                                                         [this](bool a) {
-                                                             if(a){
-                                                                 addFreezer(contextMenu->getOrigin());
-                                                             }
-                                                         });
-    
-    
-    
-    
+    contextMenu->addSpacer(false);
     contextMenu->addSpacer(false);
     
     contextMenu->addButton("Tile", false)->setCallback(
@@ -291,20 +283,41 @@ void Orage::setup(){
                                                                addTile(contextMenu->getOrigin());
                                                            }
                                                        });
+    contextMenu->addButton("Freezer", false)->setCallback(
+                                                          [this](bool a) {
+                                                              if(a){
+                                                                  addFreezer(contextMenu->getOrigin());
+                                                              }
+                                                          });
+
     contextMenu->addButton("Color Adjustement", false)->setCallback(
                                                                     [this](bool a) {
                                                                         if(a){
                                                                             addColorAdjustement(contextMenu->getOrigin());
                                                                         }
                                                                     });
-
-    contextMenu->addButton("Invert", false)->setCallback(
+    
+    contextMenu->addButton("Delay", false)->setCallback(
+                                                        [this](bool a) {
+                                                            if(a){
+                                                                addDelay(contextMenu->getOrigin());
+                                                            }
+                                                        });
+    
+    contextMenu->addButton("Resize", false)->setCallback(
                                                          [this](bool a) {
                                                              if(a){
-                                                                 addInvert(contextMenu->getOrigin());
+                                                                 addResize(contextMenu->getOrigin());
                                                              }
                                                          });
-
+    
+    contextMenu->addButton("Blur", false)->setCallback(
+                                                         [this](bool a) {
+                                                             if(a){
+                                                                 addBlur(contextMenu->getOrigin());
+                                                             }
+                                                         });
+    
     contextMenu->addSpacer();
     
     contextMenu->addButton("LFO", false)->setCallback(
@@ -365,12 +378,29 @@ void Orage::setup(){
                                                                        }
                                                                    });
     
+    contextMenu->addSpacer();
+    
+    contextMenu->addButton("Syphon", false)->setCallback(
+                                                         [this](bool a) {
+                                                             if(a){
+                                                                 addSyphonInput(contextMenu->getOrigin());
+                                                             }
+                                                         });
+    contextMenu->addButton("Output", false)->setCallback(
+                                                         [this](bool a) {
+                                                             if(a){
+                                                                 addOutput(contextMenu->getOrigin());
+                                                             }
+                                                         });
     
     
     contextMenu->setVisible(false);
     
     
-    addPianoInput(vec2(0, 0));
+    //addPianoInput(vec2(0, 0));
+
+    addOutput(vec2(getWindowWidth() - ModuleCommon::WIDTH*2, getWindowHeight() - 305));
+    
 }
 
 

@@ -144,7 +144,6 @@ namespace ogre {
                    reset();
                 }
             }
-        
             void clickOnLinker(string name, SliderfRef slider, ButtonRef btn){
                 switch(status.to_ulong()){
                     case 0:

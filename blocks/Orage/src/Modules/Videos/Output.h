@@ -11,6 +11,7 @@
 
 
 #include "ModuleVideo.h"
+#include "cinder/qtime/AvfWriter.h"
 
 using namespace reza::ui;
 using namespace ci;
@@ -24,6 +25,9 @@ namespace ogre {
         gl::FboRef			mFbo;
         
         Output(string name, vec2 origin, vec2 size, gl::Context * mMainWinCtx);
+        qtime::MovieWriterRef mMovieExporter;
+        qtime::MovieWriter::Format format;
+        Surface8u	mInputImage;
     public:
         static int COUNT;
         static int winOutCOUNT;

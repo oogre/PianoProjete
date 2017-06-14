@@ -49,10 +49,12 @@ namespace ogre {
             SpliterRef addSpliter(vec2 origin);
             CrossfaderRef addCrossfader(vec2 origin);
             ColorAdjustementRef addColorAdjustement(vec2 origin);
-            InvertRef addInvert(vec2 origin);
             CloudRef addCloud(vec2 origin);
             SyphonInputRef addSyphonInput(vec2 origin);
             FreezerRef addFreezer(vec2 origin);
+            DelayRef addDelay(vec2 origin);
+            ResizeRef addResize(vec2 origin);
+            BlurRef addBlur(vec2 origin);
 
             OutputRef addOutput(vec2 origin);
         

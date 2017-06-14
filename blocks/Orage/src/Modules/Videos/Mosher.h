@@ -21,11 +21,10 @@ namespace ogre {
         gl::Context * mMainWinCtx;
         
         struct MosherData {
-            float map1  = .0f; //gain
-            float map2  = .0f; //gain2
             float gain  = .0f; //gain3
             float x     = .0f;
             float y     = .0f;
+            bool mirror = false;
         } data;
         
         gl::UboRef          dataUbo;
